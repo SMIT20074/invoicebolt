@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Download InvoiceBolt — Free GST Invoice App</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Syne:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:#0d1117;color:white;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.card{background:#161b22;border:1px solid #30363d;border-radius:24px;padding:40px;max-width:480px;width:100%;text-align:center;}
+.logo{width:72px;height:72px;background:#FF6B35;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 20px;box-shadow:0 8px 28px rgba(255,107,53,.4);}
+h1{font-family:'Syne',sans-serif;font-size:28px;font-weight:900;letter-spacing:-1px;margin-bottom:8px;}
+h1 span{color:#FF6B35;}
+.sub{color:rgba(255,255,255,.5);font-size:14px;line-height:1.7;margin-bottom:32px;}
+.badge-row{display:flex;justify-content:center;gap:10px;margin-bottom:32px;flex-wrap:wrap;}
+.badge{padding:5px 13px;border-radius:100px;font-size:12px;font-weight:700;}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border-radius:14px;font-weight:700;font-size:15px;text-decoration:none;margin-bottom:10px;transition:all .2s;cursor:pointer;border:none;width:100%;font-family:'Inter',sans-serif;}
+.btn-primary{background:#FF6B35;color:white;box-shadow:0 6px 20px rgba(255,107,53,.4);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,107,53,.5);}
+.btn-secondary{background:#21262d;color:rgba(255,255,255,.8);border:1px solid #30363d;}
+.btn-secondary:hover{background:#30363d;color:white;}
+.btn-pwa{background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;border:1px solid #FF6B35;}
+.divider{display:flex;align-items:center;gap:12px;margin:16px 0;color:rgba(255,255,255,.2);font-size:12px;}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.08);}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:24px;}
+.feat{background:#0d1117;border:1px solid #21262d;border-radius:10px;padding:10px 12px;font-size:12.5px;color:rgba(255,255,255,.6);text-align:left;}
+.feat span{display:block;font-weight:700;color:white;margin-bottom:2px;}
+.footer{margin-top:24px;font-size:12px;color:rgba(255,255,255,.2);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">⚡</div>
+  <h1>Invoice<span>Bolt</span></h1>
+  <p class="sub">India's fastest free GST invoice maker.<br>AI voice agent in Hindi · 80+ features · 100% free forever.</p>
+  <div class="badge-row">
+    <span class="badge" style="background:rgba(16,185,129,.15);color:#10b981;">✅ No Signup</span>
+    <span class="badge" style="background:rgba(255,107,53,.15);color:#FF6B35;">🇮🇳 GST Ready</span>
+    <span class="badge" style="background:rgba(99,102,241,.15);color:#818cf8;">🤖 AI Powered</span>
+    <span class="badge" style="background:rgba(245,158,11,.15);color:#f59e0b;">⚡ Offline Works</span>
+  </div>
+
+  <a href="app.html" class="btn btn-primary">🚀 Open Web App — Free</a>
+
+  <div class="divider">or install on your device</div>
+
+  <button class="btn btn-pwa" id="installBtn" onclick="installPWA()">📱 Install on Phone (PWA)</button>
+  <p style="font-size:11px;color:rgba(255,255,255,.3);margin:-4px 0 10px;">Works like a real app — no Play Store needed</p>
+
+  <a href="app.html" class="btn btn-secondary">🌐 Open in Browser</a>
+
+  <div class="divider">coming soon</div>
+
+  <button class="btn btn-secondary" style="opacity:.5;cursor:not-allowed;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.65.2.97.09L13.84 12 4.15.15c-.32-.1-.67-.07-.97.09C2.57.62 2.1 1.31 2.1 2.12v19.76c0 .81.47 1.5 1.08 1.88zm13.6-11.2l-2.4-2.4 2.4-2.4 2.72 1.57c.78.45.78 1.61 0 2.06l-2.72 1.57zm-2.4 2.4L4.97 21.67l8.4-8.71h.01zm0-5.92L4.97 2.33l9.4 6.71z"/></svg>
+    Android APK — Coming Soon
+  </button>
+  <button class="btn btn-secondary" style="opacity:.5;cursor:not-allowed;margin-top:8px;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.3-2.17 3.88.03 3.07 2.67 4.1 2.7 4.11l-.08.23zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    iOS App — Coming Soon
+  </button>
+
+  <div class="features">
+    <div class="feat"><span>⚡ Quick Invoice</span>Create in 15 seconds</div>
+    <div class="feat"><span>🤖 AI Voice Agent</span>Hindi & English</div>
+    <div class="feat"><span>🧾 GST Compliant</span>CGST, SGST, IGST</div>
+    <div class="feat"><span>🎨 8 Templates</span>Look professional</div>
+    <div class="feat"><span>📒 Khata Book</span>Traditional ledger</div>
+    <div class="feat"><span>📊 Reports + CA</span>GST summary</div>
+    <div class="feat"><span>🏦 Bank + UPI</span>On every invoice</div>
+    <div class="feat"><span>🔒 100% Private</span>No cloud, no login</div>
+  </div>
+
+  <div class="footer">© 2026 InvoiceBolt · invoicebolt.in · Made in India 🇮🇳</div>
+</div>
+<script>
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; document.getElementById('installBtn').style.opacity = '1'; });
+async function installPWA() {
+  if (deferredPrompt) { deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; if (outcome === 'accepted') alert('InvoiceBolt installed! Find it on your home screen.'); }
+  else { alert('To install:\n\nChrome Android: Menu → Add to Home Screen\nSafari iOS: Share → Add to Home Screen'); }
+}
+</script>
+</body>
+</html>
