@@ -112,6 +112,9 @@ body{font-family:Inter,sans-serif;background:var(--gy5);color:var(--dk);font-siz
 <body>
 <div id="root"></div>
 <script type="text/babel">
+
+
+
 const {useState,useEffect,useRef,useMemo}=React;
 
 const INR=(n,c)=>{c=c||'INR';const s={INR:'₹',USD:'$',EUR:'€',GBP:'£',AED:'AED'};return (s[c]||'₹')+parseFloat(n||0).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});};
@@ -225,6 +228,7 @@ function App(){
   const biz=useMemo(()=>bizs.find(b=>b.id===abiz)||bizs[0]||{},[bizs,abiz]);
   useEffect(()=>sv("invs",invs),[invs]);useEffect(()=>sv("clis",clis),[clis]);useEffect(()=>sv("prods",prods),[prods]);useEffect(()=>sv("exps",exps),[exps]);useEffect(()=>sv("bizs",bizs),[bizs]);useEffect(()=>sv("abiz",abiz),[abiz]);useEffect(()=>sv("tpl",tpl),[tpl]);
   useEffect(()=>{setTimeout(()=>setupNotifications(invs,toast),2000);},[]);
+  useEffect(()=>{registerSW();setTimeout(()=>checkAnniversaries(clis,invs,toast),3000);},[]);
   const toast=(msg,tp)=>{const id=UID();setTs(t=>[...t,{id,msg,tp:tp||""}]);setTimeout(()=>setTs(t=>t.filter(x=>x.id!==id)),3500);};
   const saveInv=inv=>{saveVersion(inv);setInvs(p=>{const ex=p.find(x=>x.id===inv.id);return ex?p.map(x=>x.id===inv.id?inv:x):[inv,...p];});toast("Saved!","success");const tp=inv.type;setPg(tp==="estimate"?"estimates":tp==="delivery"?"delivery":tp==="po"?"pos":tp==="credit"||tp==="debit"?"credits":"invoices");setEditI(null);};
   const delInv=id=>{if(!confirm("Delete?"))return;setInvs(p=>p.filter(x=>x.id!==id));toast("Deleted.");};
@@ -864,6 +868,9 @@ function ProdPage({prods,setProds,toast}){
     </div>}
   </div>;
 }
+
+</script>
+<script type="text/babel">
 
 function BizPage({bizs,setBizs,abiz,setAbiz,toast}){
   const [mo,setMo]=useState(false);
@@ -2058,6 +2065,11 @@ function QuickInvoice({ biz, clis, prods, invs, onSave, toast, onClose }) {
 }
 
 // ── FEATURE 3: GST CALCULATOR WIDGET ──
+
+</script>
+<script type="text/babel">
+
+
 function GSTCalc({ onClose }) {
   const [amt, setAmt] = useState('');
   const [rate, setRate] = useState(18);
@@ -2516,6 +2528,13 @@ function GSTR1({ invs, biz, onClose }) {
   );
 }
 
+
+
+</script>
+<script type="text/babel">
+
+
+
 // ── LATE FEE CALCULATOR ──
 function LateFeeCalc({ inv, biz, onClose, toast }) {
   const [rate, setRate] = useState(18);
@@ -2936,6 +2955,7 @@ function EmptyState({ icon, title, sub, cta, onCta }) {
 }
 
 ReactDOM.render(<App/>,document.getElementById("root"));
+
+
+
 </script>
-</body>
-</html>
