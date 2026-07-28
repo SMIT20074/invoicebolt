@@ -30,55 +30,6 @@
 body{font-family:Inter,sans-serif;background:var(--gy5);color:var(--dk);font-size:14px;}
 ::-webkit-scrollbar{width:4px;height:4px;}
 ::-webkit-scrollbar-thumb{background:var(--gy3);border-radius:10px;}
-.sb{width:230px;background:#0d1117;border-right:1px solid #21262d;display:flex;flex-direction:column;height:100vh;position:fixed;left:0;top:0;z-index:100;transition:width .25s ease;overflow:hidden;}
-.sb.collapsed{width:60px;}
-.sb-logo{padding:18px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #21262d;min-height:64px;}
-.sb-logo-icon{width:34px;height:34px;background:var(--or);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;box-shadow:0 4px 12px rgba(255,107,53,.35);}
-.sb-logo-text{font-family:Syne,sans-serif;font-weight:900;font-size:15px;color:white;white-space:nowrap;overflow:hidden;letter-spacing:-.3px;}
-.sb-logo-text span{color:var(--or);}
-.sb-section{padding:14px 10px 5px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#4b5563;white-space:nowrap;overflow:hidden;}
-.sb-item{display:flex;align-items:center;gap:10px;padding:8px 12px;margin:1px 6px;border-radius:8px;cursor:pointer;transition:all .15s;color:#8b949e;font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;position:relative;}
-.sb-item:hover{background:#161b22;color:white;}
-.sb-item.active{background:rgba(255,107,53,.15);color:var(--or);font-weight:700;}
-.sb-item.active::before{content:"";position:absolute;left:0;top:20%;bottom:20%;width:3px;background:var(--or);border-radius:0 3px 3px 0;}
-.sb-badge{margin-left:auto;background:var(--rd);color:white;font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:100px;}
-.sb-footer{margin-top:auto;padding:12px;border-top:1px solid #21262d;}
-.layout{display:flex;min-height:100vh;}
-.main{flex:1;margin-left:230px;transition:margin-left .25s;display:flex;flex-direction:column;min-height:100vh;}
-.topbar{background:white;border-bottom:1px solid var(--bd);padding:0 24px;height:60px;display:flex;align-items:center;gap:8px;position:sticky;top:0;z-index:90;overflow-x:auto;}
-.topbar::-webkit-scrollbar{height:0;}
-.content{padding:24px;flex:1;}
-.cmd-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:900;display:flex;align-items:flex-start;justify-content:center;padding-top:14vh;backdrop-filter:blur(4px);}
-.cmd-box{background:white;border-radius:16px;width:100%;max-width:540px;box-shadow:0 32px 80px rgba(0,0,0,.3);overflow:hidden;}
-.cmd-inp{width:100%;padding:16px 20px;border:none;font-size:15px;font-family:Inter,sans-serif;color:var(--dk);outline:none;border-bottom:1px solid var(--bd);}
-.cmd-results{max-height:360px;overflow-y:auto;}
-.cmd-item{display:flex;align-items:center;gap:12px;padding:10px 20px;cursor:pointer;transition:background .1s;font-size:13px;color:var(--dk);}
-.cmd-item:hover,.cmd-sel{background:var(--orl);}
-.cmd-icon{width:30px;height:30px;border-radius:8px;background:var(--gy5);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
-.cmd-sec{padding:6px 20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--gy2);background:var(--gy6);border-bottom:1px solid var(--bd);}
-.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 24px;text-align:center;}
-.es-icon{width:72px;height:72px;border-radius:20px;background:var(--orl);display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:18px;}
-.es-title{font-family:Syne,sans-serif;font-weight:800;font-size:19px;color:var(--dk);margin-bottom:7px;}
-.es-sub{font-size:14px;color:var(--gy2);max-width:300px;line-height:1.7;margin-bottom:20px;}
-.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid var(--bd);z-index:200;padding:8px 0 calc(env(safe-area-inset-bottom,0px) + 4px);}
-.mob-nav-inner{display:flex;justify-content:space-around;align-items:flex-end;}
-.mob-nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 10px;cursor:pointer;color:var(--gy2);font-size:10px;font-weight:600;}
-.mob-nav-item.active{color:var(--or);}
-.mob-fab{width:48px;height:48px;border-radius:50%;background:var(--or);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 16px rgba(255,107,53,.45);margin-bottom:4px;flex-shrink:0;}
-.stat-premium{background:white;border-radius:16px;padding:20px 22px;border:1px solid var(--bd);position:relative;overflow:hidden;transition:all .2s;}
-.stat-premium:hover{transform:translateY(-2px);box-shadow:var(--sh-md);}
-.stat-premium .sp-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gy2);margin-bottom:8px;}
-.stat-premium .sp-value{font-family:Syne,sans-serif;font-size:24px;font-weight:900;letter-spacing:-1px;line-height:1;margin-bottom:5px;}
-.stat-premium .sp-icon{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px;}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@media(max-width:768px){
-  .sb{display:none!important;}
-  .main{margin-left:0!important;}
-  .topbar{padding:0 14px;height:52px;gap:6px;}
-  .content{padding:14px;padding-bottom:76px;}
-  .mob-nav{display:block;}
-  .ai-fab{bottom:72px!important;right:16px!important;}
-}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @keyframes slideUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -112,9 +63,6 @@ body{font-family:Inter,sans-serif;background:var(--gy5);color:var(--dk);font-siz
 <body>
 <div id="root"></div>
 <script type="text/babel">
-
-
-
 const {useState,useEffect,useRef,useMemo}=React;
 
 const INR=(n,c)=>{c=c||'INR';const s={INR:'₹',USD:'$',EUR:'€',GBP:'£',AED:'AED'};return (s[c]||'₹')+parseFloat(n||0).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});};
@@ -123,8 +71,8 @@ const AD=(d,n)=>{const dt=new Date(d||TD());dt.setDate(dt.getDate()+n);return dt
 const UID=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
 const INI=s=>(s||'?').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
 const FD=(d,f)=>{f=f||'DD/MM/YYYY';if(!d)return '';const[y,m,day]=d.split('-');return f==='MM/DD/YYYY'?m+'/'+day+'/'+y:f==='YYYY-MM-DD'?d:day+'/'+m+'/'+y;};
-const ld=k=>{try{return JSON.parse(localStorage.getItem('ibolt_'+k)||'null')}catch{return null}};
-const sv=(k,v)=>{try{localStorage.setItem('ibolt_'+k,JSON.stringify(v))}catch{}};
+const ld=k=>{try{return JSON.parse(localStorage.getItem('eiv4_'+k)||'null')}catch{return null}};
+const sv=(k,v)=>{try{localStorage.setItem('eiv4_'+k,JSON.stringify(v))}catch{}};
 const WDS=n=>{if(!n||n===0)return 'Zero Rupees Only';const a=['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];const b=['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];const tw=x=>{if(x<20)return a[x];if(x<100)return b[Math.floor(x/10)]+(x%10?' '+a[x%10]:'');if(x<1000)return a[Math.floor(x/100)]+' Hundred'+(x%100?' and '+tw(x%100):'');if(x<100000)return tw(Math.floor(x/1000))+' Thousand'+(x%1000?' '+tw(x%1000):'');if(x<10000000)return tw(Math.floor(x/100000))+' Lakh'+(x%100000?' '+tw(x%100000):'');return tw(Math.floor(x/10000000))+' Crore'+(x%10000000?' '+tw(x%10000000):'');};return tw(Math.round(Math.abs(n)))+' Rupees Only';};
 function calcT(items,ship,paid){items=items||[];let sub=0,cg=0,sg=0,ig=0,dc=0;items.forEach(it=>{const b=(+it.qty||0)*(+it.rate||0);const d=b*(+it.disc||0)/100;sub+=b;dc+=d;cg+=(b-d)*(+it.cgst||0)/100;sg+=(b-d)*(+it.sgst||0)/100;ig+=(b-d)*(+it.igst||0)/100;});const grand=sub-dc+cg+sg+ig+(+ship||0);return {sub,cg,sg,ig,dc,grand,bal:grand-(+paid||0),subtotal:sub,totalCGST:cg,totalSGST:sg,totalIGST:ig,totalDiscount:dc,total:grand};}
 
@@ -199,38 +147,17 @@ function App(){
   const [prev,setPrev]=useState(null);
   const [editI,setEditI]=useState(null);
   const [agOpen,setAgOpen]=useState(false);
+  const [quickInv,setQuickInv]=useState(false);
+  const [gstCalc,setGstCalc]=useState(false);
   const [waRem,setWaRem]=useState(null);
   const [gstinVal,setGstinVal]=useState(false);
   const [cardScan,setCardScan]=useState(false);
   const [csvImp,setCsvImp]=useState(null);
-  const [cashFlow,setCashFlow]=useState(false);
-  const [gstRep,setGstRep]=useState(false);
-  const [annRep,setAnnRep]=useState(false);
-  const [priceSug,setPriceSug]=useState(false);
-  const [pubProf,setPubProf]=useState(false);
-  const [bankRec,setBankRec]=useState(false);
-  const [khataOpen,setKhataOpen]=useState(false);
-  const [quickInv,setQuickInv]=useState(false);
-  const [gstCalc,setGstCalc]=useState(false);
-  const [escInv,setEscInv]=useState(null);
-  const [payLink,setPayLink]=useState(null);
-  const [qrSync,setQrSync]=useState(false);
-  const [bulkInv,setBulkInv]=useState(false);
-  const [cmdOpen,setCmdOpen]=useState(false);
-  const [gstr1,setGstr1]=useState(false);
-  const [lateFee,setLateFee]=useState(null);
-  const [dailyScore,setDailyScore]=useState(false);
-  const [inventory,setInventory]=useState(false);
-  const [referral,setReferral]=useState(false);
-  const [taxTips,setTaxTips]=useState(false);
-  const [versions,setVersions]=useState(null);
   const [festTheme,setFestTheme]=useState(null);
   const biz=useMemo(()=>bizs.find(b=>b.id===abiz)||bizs[0]||{},[bizs,abiz]);
   useEffect(()=>sv("invs",invs),[invs]);useEffect(()=>sv("clis",clis),[clis]);useEffect(()=>sv("prods",prods),[prods]);useEffect(()=>sv("exps",exps),[exps]);useEffect(()=>sv("bizs",bizs),[bizs]);useEffect(()=>sv("abiz",abiz),[abiz]);useEffect(()=>sv("tpl",tpl),[tpl]);
-  useEffect(()=>{setTimeout(()=>setupNotifications(invs,toast),2000);},[]);
-  useEffect(()=>{registerSW();setTimeout(()=>checkAnniversaries(clis,invs,toast),3000);},[]);
   const toast=(msg,tp)=>{const id=UID();setTs(t=>[...t,{id,msg,tp:tp||""}]);setTimeout(()=>setTs(t=>t.filter(x=>x.id!==id)),3500);};
-  const saveInv=inv=>{saveVersion(inv);setInvs(p=>{const ex=p.find(x=>x.id===inv.id);return ex?p.map(x=>x.id===inv.id?inv:x):[inv,...p];});toast("Saved!","success");const tp=inv.type;setPg(tp==="estimate"?"estimates":tp==="delivery"?"delivery":tp==="po"?"pos":tp==="credit"||tp==="debit"?"credits":"invoices");setEditI(null);};
+  const saveInv=inv=>{setInvs(p=>{const ex=p.find(x=>x.id===inv.id);return ex?p.map(x=>x.id===inv.id?inv:x):[inv,...p];});toast("Saved!","success");const tp=inv.type;setPg(tp==="estimate"?"estimates":tp==="delivery"?"delivery":tp==="po"?"pos":tp==="credit"||tp==="debit"?"credits":"invoices");setEditI(null);};
   const delInv=id=>{if(!confirm("Delete?"))return;setInvs(p=>p.filter(x=>x.id!==id));toast("Deleted.");};
   const markPaid=id=>{setInvs(p=>p.map(x=>x.id===id?{...x,status:"paid",paid:x.total,paidOn:TD()}:x));toast("Marked paid!","success");};
   const dupInv=id=>{const inv=invs.find(x=>x.id===id);if(!inv)return;const nums=invs.map(i=>parseInt((i.number||"").replace(/\D/g,""))||0);const n={...inv,id:UID(),number:"INV-"+String((nums.length?Math.max(...nums):0)+1).padStart(3,"0"),status:"draft",date:TD(),createdAt:Date.now()};setInvs(p=>[n,...p]);toast("Duplicated!","success");};
@@ -238,7 +165,6 @@ function App(){
   const openNew=(type,pre)=>{setEditI({_new:true,type:type||"invoice",...(pre||{})});setPg("create");};
   const openEdit=id=>{setEditI(invs.find(x=>x.id===id));setPg("create");};
   const doPrint=inv=>{const w=window.open("","_blank");w.document.write(buildHTML({...inv,...calcT(inv.items,inv.shipping,inv.paid)},tpl,biz.dateFormat||"DD/MM/YYYY"));w.document.close();setTimeout(()=>w.print(),700);};
-  const saveMany=newInvs=>{setInvs(p=>[...newInvs,...p]);toast(newInvs.length+" invoices created!","success");setPg("invoices");};
   const setBF=upd=>setBizs(p=>p.map(b=>b.id===abiz?{...b,...upd}:b));
   const tpls=["Classic","Modern","Minimal","Saffron","Corporate","Royal","Emerald","Crimson"];
   const ovrd=invs.filter(i=>i.type==="invoice"&&i.status==="overdue").length;
@@ -283,33 +209,25 @@ function App(){
         </div>
         <div style={{display:"flex",gap:8,alignItems:"center"}}>
           <div className="ad nopr" style={{width:190,height:34,fontSize:10}}>Advertisement</div>
-          <button onClick={()=>setCmdOpen(true)} style={{display:'flex',alignItems:'center',gap:6,padding:'6px 12px',background:'var(--gy5)',border:'1.5px solid var(--bd)',borderRadius:'var(--r-sm)',cursor:'pointer',fontSize:12,color:'var(--gy)',fontFamily:'Inter,sans-serif',fontWeight:500,flexShrink:0}}>🔍 Search <span style={{fontSize:10,background:'white',border:'1px solid var(--bd)',padding:'1px 5px',borderRadius:4,marginLeft:2}}>⌘K</span></button>
-          <Btn v="primary" sz="sm" onClick={()=>setQuickInv(true)} style={{background:"var(--gn)",boxShadow:"0 2px 8px rgba(16,185,129,.3)"}}>⚡ Quick Invoice</Btn>
-          <Btn v="ghost" sz="sm" onClick={()=>setGstCalc(true)}>🧮 GST Calc</Btn>
-          <Btn v="ghost" sz="sm" onClick={()=>setBulkInv(true)}>📦 Bulk</Btn>
-          <Btn v="ghost" sz="sm" onClick={()=>setQrSync(true)}>📱 Sync</Btn>
-          <Btn v="ghost" sz="sm" onClick={()=>setCashFlow(true)} title="Cash Flow">📊 Cash Flow</Btn>
-          <Btn v="ghost" sz="sm" onClick={()=>setGstRep(true)} title="GST Report">🧾 GST Report</Btn>
-          <Btn v="ghost" sz="sm" onClick={()=>setPriceSug(true)} title="Price Suggestions">💡 Pricing</Btn>
-          <Btn v="ghost" sz="sm" onClick={()=>setBankRec(true)} title="Bank Reconciliation">🏦 Reconcile</Btn>
-          <Btn v="ghost" sz="sm" onClick={()=>setPubProf(true)} title="Public Profile">🌐 Profile</Btn>
           <Btn v="ghost" sz="sm" onClick={()=>setGstinVal(true)} title="Validate GSTIN">🔍 GSTIN</Btn>
           <Btn v="ghost" sz="sm" onClick={()=>setCardScan(true)} title="Scan Business Card">📇 Card</Btn>
           <Btn v="ghost" sz="sm" onClick={()=>setCsvImp("clients")} title="Import CSV">📥 Import</Btn>
           <Btn v="ghost" sz="sm" onClick={()=>setTpl(t=>{const ts=["Classic","Modern","Minimal","Saffron","Corporate","Royal","Emerald","Crimson"];return ts[(ts.indexOf(t)+1)%ts.length];})}>🎨 {tpl}</Btn>
+          <Btn v="primary" sz="sm" style={{background:"var(--gn)"}} onClick={()=>setQuickInv(true)}>⚡ Quick</Btn>
+          <Btn v="ghost" sz="sm" onClick={()=>setGstCalc(true)}>🧮 GST</Btn>
           <Btn v="primary" sz="sm" onClick={()=>openNew("invoice")}>{IC.plus}New Invoice</Btn>
         </div>
       </div>
       <div style={{padding:20,flex:1}}>
         <div className="ad nopr" style={{height:66,marginBottom:16,width:"100%",borderRadius:"var(--r-md)"}}>Google AdSense / Media.net Advertisement</div>
         {pg==="dashboard"&&<Dash invs={invs} clis={clis} exps={exps} biz={biz} onNew={openNew} onPrev={setPrev}/>}
-        {pg==="invoices"&&<DocList docs={invs.filter(i=>i.type==="invoice")} lbl="Invoice" onNew={()=>openNew("invoice")} onEdit={openEdit} onDel={delInv} onPaid={markPaid} onDup={dupInv} onPrev={setPrev} onPrt={doPrint} biz={biz} onPayLink={setPayLink} onEsc={setEscInv} onLateFee={setLateFee} onVersions={setVersions}/>}
+        {pg==="invoices"&&<DocList docs={invs.filter(i=>i.type==="invoice")} lbl="Invoice" onNew={()=>openNew("invoice")} onEdit={openEdit} onDel={delInv} onPaid={markPaid} onDup={dupInv} onPrev={setPrev} onPrt={doPrint} biz={biz}/>}
         {pg==="estimates"&&<DocList docs={invs.filter(i=>i.type==="estimate")} lbl="Estimate" onNew={()=>openNew("estimate")} onEdit={openEdit} onDel={delInv} onConv={convEst} onPrev={setPrev} onPrt={doPrint} biz={biz}/>}
         {pg==="delivery"&&<DocList docs={invs.filter(i=>i.type==="delivery")} lbl="Delivery Note" onNew={()=>openNew("delivery")} onEdit={openEdit} onDel={delInv} onPrev={setPrev} onPrt={doPrint} biz={biz}/>}
         {pg==="pos"&&<DocList docs={invs.filter(i=>i.type==="po")} lbl="Purchase Order" onNew={()=>openNew("po")} onEdit={openEdit} onDel={delInv} onPrev={setPrev} onPrt={doPrint} biz={biz}/>}
         {pg==="credits"&&<DocList docs={invs.filter(i=>i.type==="credit"||i.type==="debit")} lbl="Credit/Debit Note" onNew={()=>openNew("credit")} onEdit={openEdit} onDel={delInv} onPrev={setPrev} onPrt={doPrint} biz={biz}/>}
         {pg==="recurring"&&<RecurPage invs={invs} biz={biz} onEdit={openEdit} onPrev={setPrev}/>}
-        {pg==="khata"&&<KhataPage clis={clis} invs={invs} exps={exps} biz={biz}/> }
+        {pg==="khata"&&<KhataPage clis={clis} invs={invs} biz={biz}/>}
         {pg==="expenses"&&<ExpPage exps={exps} setExps={setExps} toast={toast}/>}
         {pg==="clients"&&<CliPage clis={clis} setClis={setClis} invs={invs} toast={toast} onNewInv={c=>openNew("invoice",{_cli:c})}/>}
         {pg==="products"&&<ProdPage prods={prods} setProds={setProds} toast={toast}/>}
@@ -324,32 +242,13 @@ function App(){
       <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{width:26,height:26}}><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
     </button>
     {agOpen&&<AIAgent onClose={()=>setAgOpen(false)} biz={biz} clis={clis} prods={prods} invs={invs} toast={toast} onGen={inv=>{setEditI(inv);setAgOpen(false);setPg("create");toast("AI invoice ready!","success");}} onAct={(act,id)=>{if(act==="paid")markPaid(id);if(act==="view"){const i=invs.find(x=>x.id===id);if(i)setPrev(i);}}}/>}
-    {quickInv&&<QuickInvoice biz={biz} clis={clis} prods={prods} invs={invs} onSave={saveInv} toast={toast} onClose={()=>setQuickInv(false)}/> }
-    {gstCalc&&<GSTCalc onClose={()=>setGstCalc(false)}/> }
-    {escInv&&<EscalationEngine inv={escInv} biz={biz} onClose={()=>setEscInv(null)} toast={toast}/> }
-    {payLink&&<PaymentLink inv={payLink} biz={biz} onClose={()=>setPayLink(null)} toast={toast}/> }
-    {qrSync&&<QRSync invs={invs} clis={clis} prods={prods} exps={exps} bizs={bizs} onClose={()=>setQrSync(false)} toast={toast}/> }
-    {bulkInv&&<BulkInvoice biz={biz} clis={clis} invs={invs} onSaveMany={saveMany} toast={toast} onClose={()=>{setBulkInv(false);setPg("invoices");}}/> }
-    {gstr1&&<GSTR1 invs={invs} biz={biz} onClose={()=>setGstr1(false)}/> }
-    {lateFee&&<LateFeeCalc inv={lateFee} biz={biz} onClose={()=>setLateFee(null)} toast={toast}/> }
-    {dailyScore&&<DailyScore invs={invs} exps={exps} biz={biz} onClose={()=>setDailyScore(false)}/> }
-    {inventory&&<InventoryAlerts prods={prods} invs={invs} onClose={()=>setInventory(false)}/> }
-    {referral&&<ReferralPage biz={biz} toast={toast} onClose={()=>setReferral(false)}/> }
-    {taxTips&&<TaxTips exps={exps} invs={invs} biz={biz} onClose={()=>setTaxTips(false)}/> }
-    {versions&&<InvoiceVersions invId={versions} onRestore={inv=>{saveInv(inv);toast("Version restored!","success");}} onClose={()=>setVersions(null)}/> }
-    {cashFlow&&<CashFlowPredictor invs={invs} exps={exps} biz={biz} onClose={()=>setCashFlow(false)}/> }
-    {gstRep&&<GSTReport invs={invs} biz={biz} onClose={()=>setGstRep(false)}/> }
-    {annRep&&<AnnualReport invs={invs} exps={exps} clis={clis} biz={biz} onClose={()=>setAnnRep(false)}/> }
-    {priceSug&&<PriceSuggester prods={prods} invs={invs} biz={biz} onClose={()=>setPriceSug(false)}/> }
-    {pubProf&&<PublicProfile biz={biz} invs={invs} onClose={()=>setPubProf(false)}/> }
-    {bankRec&&<BankRecon invs={invs} setInvs={setInvs} toast={toast} onClose={()=>setBankRec(false)}/> }
-    {cmdOpen&&<CommandPalette onClose={()=>setCmdOpen(false)} setPg={setPg} openNew={openNew} setQuickInv={setQuickInv} setGstCalc={setGstCalc} setBulkInv={setBulkInv} setCashFlow={setCashFlow} setGstRep={setGstRep} setDailyScore={setDailyScore} setReferral={setReferral}/>}
-    <MobileNav pg={pg} setPg={setPg} openNew={openNew}/>
     {gstinVal&&<GSTINValidator onClose={()=>setGstinVal(false)}/>}
     {waRem&&<WAReminder inv={waRem} biz={biz} onClose={()=>setWaRem(null)} toast={toast}/>}
     {cardScan&&<BizCardScanner onSave={c=>{setClis(p=>[{id:UID(),...c},...p]);}} onClose={()=>setCardScan(false)} toast={toast}/>}
     {csvImp&&<CSVImport type={csvImp} onImport={items=>{if(csvImp==="clients")setClis(p=>[...items,...p]);else setProds(p=>[...items,...p]);}} onClose={()=>setCsvImp(null)} toast={toast}/>}
     <PWAInstallBanner onDismiss={()=>{}}/>
+    {quickInv&&<QuickInvoice biz={biz} clis={clis} invs={invs} onSave={saveInv} toast={toast} onClose={()=>setQuickInv(false)}/>}
+    {gstCalc&&<GSTCalc onClose={()=>setGstCalc(false)}/>}
     <Toast ts={ts}/>
   </div>;
 }
@@ -407,7 +306,7 @@ function PrevMod({inv,tpl,biz,onClose,onPrt}){
   </div>;
 }
 
-function DocList({docs,lbl,onNew,onEdit,onDel,onPaid,onDup,onConv,onPrev,onPrt,biz,onPayLink,onEsc,onLateFee,onVersions}){
+function DocList({docs,lbl,onNew,onEdit,onDel,onPaid,onDup,onConv,onPrev,onPrt,biz}){
   const [q,setQ]=useState("");const [sf,setSf]=useState("");const [srt,setSrt]=useState("date");
   let list=docs.filter(d=>(!q||(d.number+((d.to&&d.to.name)||"")).toLowerCase().includes(q.toLowerCase()))&&(!sf||d.status===sf));
   if(srt==="date")list=[...list].sort((a,b)=>new Date(b.date)-new Date(a.date));
@@ -472,14 +371,7 @@ function Editor({init,biz,clis,prods,invs,onSave,onPrev,onBack,toast,tpl,onPrt})
   const applyIGST=r=>setInv(p=>({...p,items:p.items.map(it=>({...it,igst:r,cgst:0,sgst:0}))}));
   const t=calcT(inv.items,inv.shipping,inv.paid);
   const lRef=useRef();const sRef=useRef();
-  const doSave=st=>{
-    const dup=checkDuplicate(inv,invs);
-    if(dup&&!confirm("⚠️ Possible duplicate of "+dup.number+" sent to same client for same amount. Save anyway?"))return;
-    const fraudAlerts=detectGSTFraud(inv);
-    if(fraudAlerts.length&&!confirm(fraudAlerts.join("\n")+"\n\nSave anyway?"))return;
-    const stockWarnings=checkStock(prods,inv.items);
-    if(stockWarnings.length)toast(stockWarnings[0],"");
-    if(!inv.number||!(inv.to&&inv.to.name)){toast("Fill Invoice # and Client name.","error");return;}const t2=calcT(inv.items,inv.shipping,inv.paid);onSave({...inv,...t2,status:st||inv.status});};
+  const doSave=st=>{if(!inv.number||!(inv.to&&inv.to.name)){toast("Fill Invoice # and Client name.","error");return;}const t2=calcT(inv.items,inv.shipping,inv.paid);onSave({...inv,...t2,status:st||inv.status});};
   return <div className="fu">
     <div style={{display:"flex",gap:8,marginBottom:16,flexWrap:"wrap",alignItems:"center",padding:"12px 16px",background:"white",borderRadius:"var(--r-md)",border:"1px solid var(--bd)",boxShadow:"var(--sh-xs)"}}>
       <Btn v="ghost" sz="sm" onClick={onBack}>← Back</Btn><div style={{flex:1}}/>
@@ -617,7 +509,7 @@ function Dash({invs,clis,exps,biz,onNew,onPrev}){
   const mx=Math.max(...bars.map(b=>Math.max(b.rev,b.exp)),1);
   const aging={a:0,b:0,c:0};ii.filter(i=>["overdue","unpaid"].includes(i.status)).forEach(i=>{const dy=Math.floor((Date.now()-new Date(i.date))/86400000);if(dy>90)aging.c+=i.total;else if(dy>60)aging.b+=i.total;else aging.a+=i.total;});
   return <div className="fu">
-    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:12,marginBottom:16}}>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:12,marginBottom:16}}>
       <Stat label="Revenue" value={INR(pd,cur)} sub={ii.filter(i=>i.status==="paid").length+" paid"} icon={IC.chart}/>
       <Stat label="Outstanding" value={INR(out,cur)} color="var(--yl)" sub={ii.filter(i=>i.status==="unpaid").length+" unpaid"}/>
       <Stat label="Overdue" value={INR(ov,cur)} color="var(--rd)" sub={ii.filter(i=>i.status==="overdue").length+" invoices"}/>
@@ -869,9 +761,6 @@ function ProdPage({prods,setProds,toast}){
   </div>;
 }
 
-</script>
-<script type="text/babel">
-
 function BizPage({bizs,setBizs,abiz,setAbiz,toast}){
   const [mo,setMo]=useState(false);
   const [fm,setFm]=useState({name:"",email:"",phone:"",address:"",gstin:"",pan:"",type:"Proprietorship"});
@@ -1025,17 +914,17 @@ function SetPage({biz,setBiz,tpl,setTpl,toast,tpls}){
           <div style={{padding:"14px 16px",border:"1.5px solid var(--bd)",borderRadius:"var(--r-md)",background:"var(--gnl)"}}>
             <div style={{fontWeight:700,fontSize:14,color:"var(--gn)",marginBottom:6}}>📥 Export All Data</div>
             <div style={{fontSize:12.5,color:"var(--dk3)",marginBottom:10}}>Download all data as JSON backup file.</div>
-            <Btn v="success" onClick={()=>{const data={invs:JSON.parse(localStorage.getItem("ibolt_invs")||"[]"),clis:JSON.parse(localStorage.getItem("ibolt_clis")||"[]"),prods:JSON.parse(localStorage.getItem("ibolt_prods")||"[]"),exps:JSON.parse(localStorage.getItem("ibolt_exps")||"[]")};const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="easyinvoice-backup-"+TD()+".json";a.click();}}>📥 Download Backup</Btn>
+            <Btn v="success" onClick={()=>{const data={invs:JSON.parse(localStorage.getItem("eiv4_invs")||"[]"),clis:JSON.parse(localStorage.getItem("eiv4_clis")||"[]"),prods:JSON.parse(localStorage.getItem("eiv4_prods")||"[]"),exps:JSON.parse(localStorage.getItem("eiv4_exps")||"[]")};const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="easyinvoice-backup-"+TD()+".json";a.click();}}>📥 Download Backup</Btn>
           </div>
           <div style={{padding:"14px 16px",border:"1.5px solid var(--bd)",borderRadius:"var(--r-md)"}}>
             <div style={{fontWeight:700,fontSize:14,marginBottom:6}}>📤 Import Data</div>
-            <input type="file" accept=".json" style={{display:"none"}} id="impf2" onChange={e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{try{const d=JSON.parse(ev.target.result);if(d.invs)localStorage.setItem("ibolt_invs",JSON.stringify(d.invs));if(d.clis)localStorage.setItem("ibolt_clis",JSON.stringify(d.clis));if(d.prods)localStorage.setItem("ibolt_prods",JSON.stringify(d.prods));if(d.exps)localStorage.setItem("ibolt_exps",JSON.stringify(d.exps));alert("Imported! Refreshing...");window.location.reload();}catch{alert("Invalid file.");}};r.readAsText(f);}}/>
+            <input type="file" accept=".json" style={{display:"none"}} id="impf2" onChange={e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{try{const d=JSON.parse(ev.target.result);if(d.invs)localStorage.setItem("eiv4_invs",JSON.stringify(d.invs));if(d.clis)localStorage.setItem("eiv4_clis",JSON.stringify(d.clis));if(d.prods)localStorage.setItem("eiv4_prods",JSON.stringify(d.prods));if(d.exps)localStorage.setItem("eiv4_exps",JSON.stringify(d.exps));alert("Imported! Refreshing...");window.location.reload();}catch{alert("Invalid file.");}};r.readAsText(f);}}/>
             <Btn v="ghost" onClick={()=>document.getElementById("impf2").click()}>📤 Import</Btn>
           </div>
           <div style={{padding:"14px 16px",border:"1.5px solid var(--rd)",borderRadius:"var(--r-md)",background:"var(--rdl)"}}>
             <div style={{fontWeight:700,fontSize:14,color:"var(--rd)",marginBottom:5}}>⚠️ Clear All Data</div>
             <div style={{fontSize:12.5,color:"var(--dk3)",marginBottom:10}}>Permanently delete everything. Cannot be undone!</div>
-            <Btn v="danger" onClick={()=>{if(confirm("Delete ALL data?")){["invs","clis","prods","exps"].forEach(k=>localStorage.removeItem("ibolt_"+k));window.location.reload();}}}>🗑️ Clear All</Btn>
+            <Btn v="danger" onClick={()=>{if(confirm("Delete ALL data?")){["invs","clis","prods","exps"].forEach(k=>localStorage.removeItem("eiv4_"+k));window.location.reload();}}}>🗑️ Clear All</Btn>
           </div>
         </div>
       </Card>}
@@ -1471,1491 +1360,141 @@ function PublicInvoiceViewer({ tpl }) {
   } catch { return null; }
 }
 
-// ══════════════════════════════════════════
-// ALL 30 NEW FEATURES — EASY INVOICE INDIA
-// ══════════════════════════════════════════
-
-// ── 1. AI DUPLICATE DETECTOR ──
-function checkDuplicate(inv, invs) {
-  if (!inv || !invs) return null;
-  const t = calcT(inv.items, inv.shipping, inv.paid);
-  const match = invs.find(x => x.id !== inv.id && x.to?.name === inv.to?.name && Math.abs(x.total - t.grand) < 1 && x.date === inv.date);
-  return match || null;
-}
-
-// ── 2. AI FRAUD ALERT (GST state mismatch) ──
-function detectGSTFraud(inv) {
-  const alerts = [];
-  const stateCodes = { 'Andhra Pradesh': '28', 'Assam': '18', 'Bihar': '10', 'Chhattisgarh': '22', 'Delhi': '07', 'Goa': '30', 'Gujarat': '24', 'Haryana': '06', 'Himachal Pradesh': '02', 'Jharkhand': '20', 'Karnataka': '29', 'Kerala': '32', 'Madhya Pradesh': '23', 'Maharashtra': '27', 'Manipur': '14', 'Meghalaya': '17', 'Mizoram': '15', 'Nagaland': '13', 'Odisha': '21', 'Punjab': '03', 'Rajasthan': '08', 'Sikkim': '11', 'Tamil Nadu': '33', 'Telangana': '36', 'Tripura': '16', 'Uttar Pradesh': '09', 'Uttarakhand': '05', 'West Bengal': '19' };
-  const fromGST = inv.from?.gstin || '';
-  const toGST = inv.to?.gstin || '';
-  const fromState = fromGST.slice(0, 2);
-  const toState = toGST.slice(0, 2);
-  if (fromGST && toGST && fromState !== toState && inv.gstType === 'cgst_sgst') {
-    alerts.push('⚠️ GST Mismatch: Client is in a different state — IGST should apply, not CGST+SGST.');
-  }
-  if (fromGST && toGST && fromState === toState && inv.gstType === 'igst') {
-    alerts.push('⚠️ GST Mismatch: Same state transaction — CGST+SGST should apply, not IGST.');
-  }
-  const hasIGST = (inv.items || []).some(i => (+i.igst) > 0);
-  const hasCGST = (inv.items || []).some(i => (+i.cgst) > 0);
-  if (hasIGST && hasCGST) alerts.push('⚠️ Mixed GST: Some items have IGST and others have CGST. Check each item.');
-  return alerts;
-}
-
-// ── 3. CLIENT HEALTH SCORE ──
-function getClientHealth(cli, invs) {
-  const ci = invs.filter(i => i.to?.name === cli.name && i.type === 'invoice');
-  if (!ci.length) return { score: 0, grade: '—', color: 'var(--gy2)', badges: [] };
-  const paid = ci.filter(i => i.status === 'paid');
-  const payRate = paid.length / ci.length;
-  const avgDays = paid.filter(i => i.paidOn && i.due).reduce((a, i) => {
-    const d = Math.max(0, (new Date(i.paidOn) - new Date(i.due)) / 86400000);
-    return a + d;
-  }, 0) / (paid.length || 1);
-  const total = ci.reduce((a, i) => a + i.total, 0);
-  const months = Math.max(1, (Date.now() - new Date(ci[ci.length - 1]?.date)) / (30 * 86400000));
-  let score = Math.round(payRate * 50 + Math.max(0, 30 - avgDays) + Math.min(20, total / 5000));
-  const grade = score >= 80 ? 'A+' : score >= 65 ? 'A' : score >= 50 ? 'B' : score >= 35 ? 'C' : 'D';
-  const color = score >= 80 ? 'var(--gn)' : score >= 50 ? 'var(--yl)' : 'var(--rd)';
-  const badges = [];
-  if (payRate === 1) badges.push('✅ Always Pays');
-  if (avgDays < 5) badges.push('⚡ Pays Fast');
-  if (total > 100000) badges.push('💎 Big Client');
-  if (ci.length > 10) badges.push('🔄 Loyal');
-  if (payRate < 0.5) badges.push('⚠️ Payment Risk');
-  return { score, grade, color, badges, payRate: Math.round(payRate * 100), total, count: ci.length };
-}
-
-// ── 4. CASH FLOW PREDICTOR ──
-function CashFlowPredictor({ invs, exps, biz, onClose }) {
-  const [pred, setPred] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const predict = async () => {
-    setLoading(true);
-    const now = new Date();
-    const last3 = Array.from({ length: 3 }, (_, i) => {
-      const d = new Date(now.getFullYear(), now.getMonth() - i - 1, 1);
-      const k = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
-      const rev = invs.filter(x => x.status === 'paid' && (x.date || '').startsWith(k)).reduce((a, x) => a + x.total, 0);
-      const exp = exps.filter(x => (x.date || '').startsWith(k)).reduce((a, x) => a + x.amount, 0);
-      return { month: k, rev, exp };
-    });
-    const overdue = invs.filter(i => i.status === 'overdue' || i.status === 'unpaid').slice(0, 5).map(i => ({ num: i.number, client: i.to?.name, amt: i.total, due: i.due }));
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 600, system: 'You are a CFO advisor for Indian small businesses. Give practical, specific cash flow advice. Be concise, use bullet points, use ₹ for amounts. Respond in 4 sections: NEXT MONTH PREDICTION, RISKS, OPPORTUNITIES, ACTION ITEMS. Keep each section to 2-3 points max.', messages: [{ role: 'user', content: `Business: ${biz.name}. Last 3 months revenue/expenses: ${JSON.stringify(last3)}. Overdue invoices: ${JSON.stringify(overdue)}. Predict next month cash flow and give advice.` }] }) });
-      const d = await res.json();
-      setPred(d.content?.[0]?.text || 'Could not generate prediction.');
-    } catch { setPred('Network error. Please try again.'); }
-    setLoading(false);
+// ── QUICK INVOICE ──
+function QuickInvoice({biz,clis,invs,onSave,toast,onClose}){
+  const [client,setClient]=useState('');const [amount,setAmount]=useState('');const [gst,setGst]=useState(18);const [desc,setDesc]=useState('Services');
+  const nums=invs.map(i=>parseInt((i.number||'').replace(/\D/g,''))||0);
+  const nextNum='INV-'+String((nums.length?Math.max(...nums):0)+1).padStart(3,'0');
+  const base=parseFloat(amount)||0;const tax=base*gst/100;const total=base+tax;
+  const save=()=>{
+    if(!client||!amount){toast('Enter client and amount.','error');return;}
+    const cli=clis.find(c=>c.name.toLowerCase().includes(client.toLowerCase()));
+    const cgstR=gst/2;const sgstR=gst/2;const cg=base*cgstR/100;const sg=base*sgstR/100;
+    const inv={id:UID(),number:nextNum,type:'invoice',date:TD(),due:AD(TD(),30),status:'unpaid',currency:biz.currency||'INR',gstType:'cgst_sgst',createdAt:Date.now(),
+      from:{name:biz.name,email:biz.email,phone:biz.phone,address:biz.address,gstin:biz.gstin,pan:biz.pan},
+      to:{name:cli?.name||client,email:cli?.email||'',phone:cli?.phone||'',address:cli?.address||'',gstin:cli?.gstin||''},
+      items:[{id:UID(),desc:desc||'Services',qty:1,rate:base,unit:'pcs',hsn:'',cgst:cgstR,sgst:sgstR,igst:0,disc:0,note:''}],
+      notes:biz.defaultNotes||'',footer:biz.footer||'Thank you!',bankName:biz.bankName||'',bankAcc:biz.bankAcc||'',bankIFSC:biz.bankIFSC||'',upi:biz.upi||'',
+      logo:biz.logo||'',signature:biz.signature||'',po:'',shipping:0,paid:0,
+      sub:base,subtotal:base,totalCGST:cg,totalSGST:sg,totalIGST:0,totalDiscount:0,total,grand:total,bal:total,dc:0,cg,sg,ig:0};
+    onSave(inv);onClose();
   };
-
-  useEffect(() => { predict(); }, []);
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 540, maxHeight: '88vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .22s ease' }}>
-        <div style={{ padding: '20px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, background: 'white', borderRadius: 'var(--r-xl) var(--r-xl) 0 0' }}>
-          <div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>📊 AI Cash Flow Predictor</div><div style={{ fontSize: 12, color: 'var(--gy2)', marginTop: 2 }}>Your personal CFO — powered by AI</div></div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
+  return <div style={{position:'fixed',inset:0,background:'rgba(13,17,23,.75)',zIndex:600,display:'flex',alignItems:'center',justifyContent:'center',padding:16,backdropFilter:'blur(10px)'}} onClick={e=>{if(e.target===e.currentTarget)onClose();}}>
+    <div style={{background:'white',borderRadius:'var(--r-xl)',width:'100%',maxWidth:400,boxShadow:'var(--sh-xl)',animation:'slideUp .2s ease',overflow:'hidden'}}>
+      <div style={{background:'var(--or)',padding:'18px 22px',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+        <div style={{fontFamily:'Syne,sans-serif',fontWeight:900,fontSize:17,color:'white'}}>⚡ Quick Invoice</div>
+        <button onClick={onClose} style={{background:'rgba(255,255,255,.2)',border:'none',color:'white',width:28,height:28,borderRadius:'50%',cursor:'pointer',fontSize:14}}>✕</button>
+      </div>
+      <div style={{padding:22}}>
+        <div style={{marginBottom:12}}><label style={{fontSize:11,fontWeight:700,color:'var(--gy)',textTransform:'uppercase',display:'block',marginBottom:5}}>Client Name</label>
+          <Inp value={client} onChange={e=>setClient(e.target.value)} placeholder="Type client name…" style={{fontSize:14}}/></div>
+        <div style={{marginBottom:12}}><label style={{fontSize:11,fontWeight:700,color:'var(--gy)',textTransform:'uppercase',display:'block',marginBottom:5}}>Description</label>
+          <Inp value={desc} onChange={e=>setDesc(e.target.value)} placeholder="Services provided" style={{fontSize:13}}/></div>
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12,marginBottom:16}}>
+          <div><label style={{fontSize:11,fontWeight:700,color:'var(--gy)',textTransform:'uppercase',display:'block',marginBottom:5}}>Amount (₹)</label>
+            <Inp type="number" value={amount} onChange={e=>setAmount(e.target.value)} placeholder="25000" style={{fontSize:15,fontWeight:700}}/></div>
+          <div><label style={{fontSize:11,fontWeight:700,color:'var(--gy)',textTransform:'uppercase',display:'block',marginBottom:5}}>GST %</label>
+            <Sl value={gst} onChange={e=>setGst(+e.target.value)}>{[0,5,12,18,28].map(r=><option key={r} value={r}>{r}%</option>)}</Sl></div>
         </div>
-        <div style={{ padding: '20px 22px' }}>
-          {loading ? <div style={{ textAlign: 'center', padding: '40px 0' }}>
-            <div style={{ display: 'flex', gap: 7, justifyContent: 'center', marginBottom: 14 }}><div className="dot" /><div className="dot" /><div className="dot" /></div>
-            <div style={{ fontSize: 14, color: 'var(--gy)', fontWeight: 500 }}>AI is analyzing your business data…</div>
-          </div> : <div style={{ fontSize: 14, color: 'var(--dk)', lineHeight: 1.85, whiteSpace: 'pre-wrap' }}>{pred}</div>}
-          <div style={{ display: 'flex', gap: 8, marginTop: 20 }}>
-            <Btn v="ghost" sz="sm" onClick={predict} style={{ flex: 1, justifyContent: 'center' }}>🔄 Refresh</Btn>
-            <Btn v="primary" sz="sm" onClick={onClose} style={{ flex: 1, justifyContent: 'center' }}>Got It ✓</Btn>
-          </div>
-        </div>
+        {base>0&&<div style={{background:'var(--orl)',border:'1.5px solid var(--orb)',borderRadius:'var(--r-md)',padding:'12px 14px',marginBottom:14}}>
+          <div style={{display:'flex',justifyContent:'space-between',fontSize:12,color:'var(--gy)',marginBottom:3}}><span>Subtotal</span><span>{INR(base)}</span></div>
+          <div style={{display:'flex',justifyContent:'space-between',fontSize:12,color:'var(--gy)',marginBottom:5}}><span>GST {gst}%</span><span>{INR(tax)}</span></div>
+          <div style={{display:'flex',justifyContent:'space-between',fontFamily:'Syne,sans-serif',fontWeight:900,fontSize:19,color:'var(--or)'}}><span>Total</span><span>{INR(total)}</span></div>
+        </div>}
+        <button onClick={save} style={{width:'100%',padding:13,background:'var(--or)',color:'white',border:'none',borderRadius:'var(--r-md)',fontFamily:'Syne,sans-serif',fontWeight:900,fontSize:16,cursor:'pointer',boxShadow:'0 5px 18px rgba(255,107,53,.4)'}}>
+          ⚡ Create {nextNum}
+        </button>
       </div>
     </div>
-  );
+  </div>;
 }
 
-// ── 5. GST REPORT FOR CA ──
-function GSTReport({ invs, biz, onClose }) {
-  const now = new Date();
-  const [yr, setYr] = useState(now.getMonth() >= 3 ? now.getFullYear() : now.getFullYear() - 1);
-  const months = Array.from({ length: 12 }, (_, i) => {
-    const mIdx = (i + 3) % 12;
-    const mYr = i < 9 ? yr : yr + 1;
-    const k = `${mYr}-${String(mIdx + 1).padStart(2, '0')}`;
-    const ii = invs.filter(x => x.type === 'invoice' && (x.date || '').startsWith(k));
-    return { label: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'][i], k, taxable: ii.reduce((a, x) => a + (x.subtotal || x.sub || 0), 0), cgst: ii.reduce((a, x) => a + (x.totalCGST || x.cg || 0), 0), sgst: ii.reduce((a, x) => a + (x.totalSGST || x.sg || 0), 0), igst: ii.reduce((a, x) => a + (x.totalIGST || x.ig || 0), 0), count: ii.length };
-  });
-  const tot = months.reduce((a, m) => ({ taxable: a.taxable + m.taxable, cgst: a.cgst + m.cgst, sgst: a.sgst + m.sgst, igst: a.igst + m.igst, count: a.count + m.count }), { taxable: 0, cgst: 0, sgst: 0, igst: 0, count: 0 });
-  const cur = biz.currency || 'INR';
-
-  const printReport = () => {
-    const w = window.open('', '_blank');
-    w.document.write(`<html><head><title>GST Report FY${yr}-${yr + 1}</title><style>body{font-family:Arial,sans-serif;padding:30px;color:#111;}h1{color:#FF6B35;font-size:22px;}table{width:100%;border-collapse:collapse;margin-top:20px;}th{background:#FF6B35;color:white;padding:10px;font-size:12px;text-align:left;}td{padding:9px 10px;border-bottom:1px solid #eee;font-size:12.5px;}tr:last-child td{font-weight:bold;background:#fff4ef;}.tot{font-weight:900;font-size:14px;color:#FF6B35;}</style></head><body>
-    <h1>GST Summary Report — FY ${yr}-${yr + 1}</h1>
-    <p style="color:#666;font-size:13px;">Business: <b>${biz.name || 'My Business'}</b> | GSTIN: <b>${biz.gstin || '—'}</b></p>
-    <table><thead><tr><th>Month</th><th>Invoices</th><th>Taxable Amount</th><th>CGST</th><th>SGST</th><th>IGST</th><th>Total Tax</th></tr></thead>
-    <tbody>${months.map(m => `<tr><td>${m.label} ${m.k.split('-')[0]}</td><td>${m.count}</td><td>${INR(m.taxable, cur)}</td><td>${INR(m.cgst, cur)}</td><td>${INR(m.sgst, cur)}</td><td>${INR(m.igst, cur)}</td><td><b>${INR(m.cgst + m.sgst + m.igst, cur)}</b></td></tr>`).join('')}
-    <tr class="tot"><td>TOTAL</td><td>${tot.count}</td><td>${INR(tot.taxable, cur)}</td><td>${INR(tot.cgst, cur)}</td><td>${INR(tot.sgst, cur)}</td><td>${INR(tot.igst, cur)}</td><td class="tot">${INR(tot.cgst + tot.sgst + tot.igst, cur)}</td></tr>
-    </tbody></table>
-    <p style="margin-top:24px;font-size:12px;color:#999;">Generated by InvoiceBolt · invoicebolt.in</p>
-    </body></html>`);
-    w.document.close(); setTimeout(() => w.print(), 600);
-  };
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 820, maxHeight: '90vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .22s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, background: 'white', borderRadius: 'var(--r-xl) var(--r-xl) 0 0' }}>
-          <div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 16 }}>🧾 GST Report for CA — FY {yr}-{yr + 1}</div><div style={{ fontSize: 12, color: 'var(--gy2)', marginTop: 1 }}>{biz.name} · GSTIN: {biz.gstin || '—'}</div></div>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <select value={yr} onChange={e => setYr(+e.target.value)} style={{ padding: '6px 10px', border: '1.5px solid var(--bd)', borderRadius: 'var(--r-sm)', fontSize: 13, fontFamily: 'Inter,sans-serif', outline: 'none' }}>
-              {[2022, 2023, 2024, 2025, 2026].map(y => <option key={y} value={y}>FY {y}-{y + 1}</option>)}
-            </select>
-            <Btn v="primary" sz="sm" onClick={printReport}>🖨️ Print / PDF</Btn>
-            <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-          </div>
-        </div>
-        <div style={{ padding: '20px 22px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 12, marginBottom: 20 }}>
-            {[['Taxable Turnover', INR(tot.taxable, cur), 'var(--dk)'], ['Total CGST', INR(tot.cgst, cur), 'var(--or)'], ['Total SGST', INR(tot.sgst, cur), 'var(--bl)'], ['Total IGST', INR(tot.igst, cur), 'var(--pu)']].map(([l, v, c]) => <div key={l} style={{ background: 'var(--gy6)', padding: '13px 14px', borderRadius: 'var(--r-md)', border: '1px solid var(--bd)' }}><div style={{ fontSize: 10.5, color: 'var(--gy2)', fontWeight: 700, textTransform: 'uppercase', marginBottom: 4 }}>{l}</div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 16, color: c }}>{v}</div></div>)}
-          </div>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-              <thead><tr style={{ background: 'var(--gy6)', borderBottom: '2px solid var(--bd)' }}>
-                {['Month', 'Invoices', 'Taxable', 'CGST', 'SGST', 'IGST', 'Total Tax'].map(h => <th key={h} style={{ padding: '10px 12px', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', color: 'var(--gy2)', textAlign: 'left' }}>{h}</th>)}
-              </tr></thead>
-              <tbody>
-                {months.map((m, i) => <tr key={i} style={{ borderBottom: '1px solid var(--bd)', background: i % 2 === 0 ? 'white' : 'var(--gy6)' }}>
-                  <td style={{ padding: '10px 12px', fontWeight: 600, fontSize: 13 }}>{m.label} {m.k.split('-')[0]}</td>
-                  <td style={{ padding: '10px 12px', fontSize: 12.5, color: 'var(--gy)' }}>{m.count}</td>
-                  <td style={{ padding: '10px 12px', fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 13 }}>{INR(m.taxable, cur)}</td>
-                  <td style={{ padding: '10px 12px', fontSize: 12.5, color: 'var(--or)' }}>{INR(m.cgst, cur)}</td>
-                  <td style={{ padding: '10px 12px', fontSize: 12.5, color: 'var(--bl)' }}>{INR(m.sgst, cur)}</td>
-                  <td style={{ padding: '10px 12px', fontSize: 12.5, color: 'var(--pu)' }}>{INR(m.igst, cur)}</td>
-                  <td style={{ padding: '10px 12px', fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 14, color: 'var(--gn)' }}>{INR(m.cgst + m.sgst + m.igst, cur)}</td>
-                </tr>)}
-                <tr style={{ background: '#fff4ef', borderTop: '2px solid var(--or)' }}>
-                  <td style={{ padding: '12px', fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 14, color: 'var(--or)' }}>TOTAL</td>
-                  <td style={{ padding: '12px', fontWeight: 700 }}>{tot.count}</td>
-                  <td style={{ padding: '12px', fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 14 }}>{INR(tot.taxable, cur)}</td>
-                  <td style={{ padding: '12px', fontFamily: 'Syne,sans-serif', fontWeight: 800, color: 'var(--or)' }}>{INR(tot.cgst, cur)}</td>
-                  <td style={{ padding: '12px', fontFamily: 'Syne,sans-serif', fontWeight: 800, color: 'var(--bl)' }}>{INR(tot.sgst, cur)}</td>
-                  <td style={{ padding: '12px', fontFamily: 'Syne,sans-serif', fontWeight: 800, color: 'var(--pu)' }}>{INR(tot.igst, cur)}</td>
-                  <td style={{ padding: '12px', fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 16, color: 'var(--gn)' }}>{INR(tot.cgst + tot.sgst + tot.igst, cur)}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div style={{ marginTop: 16, padding: '13px 16px', background: 'var(--bll)', borderRadius: 'var(--r-md)', fontSize: 13, color: 'var(--bl)', lineHeight: 1.6 }}>
-            💡 <b>For your CA:</b> Total GST liability = CGST + SGST + IGST = {INR(tot.cgst + tot.sgst + tot.igst, cur)} for FY {yr}-{yr + 1}. Use Print/PDF to share this report.
-          </div>
-        </div>
+// ── GST CALCULATOR ──
+function GSTCalc({onClose}){
+  const [amt,setAmt]=useState('');const [rate,setRate]=useState(18);const [incl,setIncl]=useState(false);
+  const base=incl?parseFloat(amt||0)/(1+rate/100):parseFloat(amt||0);
+  const tax=base*rate/100;const cgst=tax/2;const total=base+tax;
+  return <div style={{position:'fixed',inset:0,background:'rgba(13,17,23,.7)',zIndex:500,display:'flex',alignItems:'center',justifyContent:'center',padding:16,backdropFilter:'blur(8px)'}} onClick={e=>{if(e.target===e.currentTarget)onClose();}}>
+    <div style={{background:'white',borderRadius:'var(--r-xl)',width:'100%',maxWidth:360,boxShadow:'var(--sh-xl)',animation:'slideUp .2s ease'}}>
+      <div style={{padding:'16px 20px',borderBottom:'1px solid var(--bd)',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+        <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:16}}>🧮 GST Calculator</div>
+        <button onClick={onClose} style={{background:'var(--gy5)',border:'none',width:28,height:28,borderRadius:'50%',cursor:'pointer',fontSize:13}}>✕</button>
       </div>
-    </div>
-  );
-}
-
-// ── 6. ANNUAL BUSINESS REPORT ──
-function AnnualReport({ invs, exps, clis, biz, onClose }) {
-  const [loading, setLoading] = useState(false);
-  const [report, setReport] = useState('');
-  const now = new Date();
-  const yr = now.getFullYear();
-
-  const generate = async () => {
-    setLoading(true);
-    const ii = invs.filter(i => i.type === 'invoice' && (i.date || '').startsWith(String(yr)));
-    const revenue = ii.filter(i => i.status === 'paid').reduce((a, i) => a + i.total, 0);
-    const expenses = exps.filter(e => (e.date || '').startsWith(String(yr))).reduce((a, e) => a + e.amount, 0);
-    const topCli = clis.map(c => ({ name: c.name, total: ii.filter(i => i.to?.name === c.name).reduce((a, i) => a + i.total, 0) })).sort((a, b) => b.total - a.total).slice(0, 3);
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 800, system: 'You write annual business summary reports for Indian small business owners. Be warm, encouraging, professional. Use ₹ for amounts. Use emojis. Structure: 1) Year in Review 2) Financial Highlights 3) Top Achievements 4) Areas to Improve 5) Goals for Next Year. Keep each section 2-3 sentences. End with a motivational note.', messages: [{ role: 'user', content: `Business: ${biz.name}. Year: ${yr}. Revenue: ₹${revenue.toLocaleString('en-IN')}. Expenses: ₹${expenses.toLocaleString('en-IN')}. Net Profit: ₹${(revenue - expenses).toLocaleString('en-IN')}. Total Invoices: ${ii.length}. Top clients: ${topCli.map(c => c.name).join(', ')}. Generate annual business report.` }] }) });
-      const d = await res.json();
-      setReport(d.content?.[0]?.text || 'Could not generate report.');
-    } catch { setReport('Network error. Please try again.'); }
-    setLoading(false);
-  };
-
-  useEffect(() => { generate(); }, []);
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 560, maxHeight: '88vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .22s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, background: 'white' }}>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>🏆 Annual Business Report {yr}</div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
+      <div style={{padding:'18px 20px'}}>
+        <div style={{marginBottom:12}}><label style={{fontSize:11,fontWeight:700,color:'var(--gy)',textTransform:'uppercase',display:'block',marginBottom:5}}>Amount (₹)</label>
+          <Inp type="number" value={amt} onChange={e=>setAmt(e.target.value)} placeholder="Enter amount…" style={{fontSize:17,fontWeight:700,padding:'11px 13px'}}/></div>
+        <div style={{display:'flex',gap:10,marginBottom:14,alignItems:'center'}}>
+          <div style={{flex:1}}><label style={{fontSize:11,fontWeight:700,color:'var(--gy)',textTransform:'uppercase',display:'block',marginBottom:5}}>GST Rate</label>
+            <Sl value={rate} onChange={e=>setRate(+e.target.value)}>{[0,0.25,1,3,5,12,18,28].map(r=><option key={r} value={r}>{r}%</option>)}</Sl></div>
+          <label style={{display:'flex',alignItems:'center',gap:7,cursor:'pointer',fontSize:13,fontWeight:500,paddingTop:18}}>
+            <label className="tg"><input type="checkbox" checked={incl} onChange={e=>setIncl(e.target.checked)}/><span className="tgl"/></label>Inclusive
+          </label>
         </div>
-        <div style={{ padding: '20px 22px' }}>
-          {loading ? <div style={{ textAlign: 'center', padding: '40px 0' }}>
-            <div style={{ display: 'flex', gap: 7, justifyContent: 'center', marginBottom: 14 }}><div className="dot" /><div className="dot" /><div className="dot" /></div>
-            <div style={{ fontSize: 14, color: 'var(--gy)' }}>AI is writing your annual report…</div>
-          </div> : <div style={{ fontSize: 14, color: 'var(--dk)', lineHeight: 1.9, whiteSpace: 'pre-wrap' }}>{report}</div>}
-          <div style={{ display: 'flex', gap: 8, marginTop: 20 }}>
-            <Btn v="ghost" sz="sm" onClick={() => navigator.clipboard.writeText(report)}>📋 Copy</Btn>
-            <Btn v="ghost" sz="sm" onClick={generate}>🔄 Regenerate</Btn>
-            <Btn v="primary" sz="sm" onClick={onClose} style={{ flex: 1, justifyContent: 'center' }}>Done ✓</Btn>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── 7. PRICE SUGGESTER ──
-function PriceSuggester({ prods, invs, biz, onClose }) {
-  const [loading, setLoading] = useState(false);
-  const [suggestions, setSuggestions] = useState('');
-
-  const analyze = async () => {
-    setLoading(true);
-    const history = prods.slice(0, 15).map(p => {
-      const uses = invs.flatMap(i => i.items || []).filter(it => it.desc === p.name);
-      const lastUsed = uses.length ? uses[uses.length - 1] : null;
-      return { name: p.name, currentRate: p.rate, unit: p.unit, timesInvoiced: uses.length, lastRate: lastUsed?.rate };
-    }).filter(p => p.timesInvoiced > 0);
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 600, system: 'You are a pricing advisor for Indian small businesses. Suggest price increases based on usage frequency and market awareness. Be specific, practical. Use ₹. Give reasons. Format: Product Name → Current ₹X → Suggested ₹Y (reason)', messages: [{ role: 'user', content: `Business type: ${biz.name}. Products/services and usage: ${JSON.stringify(history)}. Suggest pricing improvements. Be specific with numbers.` }] }) });
-      const d = await res.json();
-      setSuggestions(d.content?.[0]?.text || 'Could not generate suggestions.');
-    } catch { setSuggestions('Network error. Please try again.'); }
-    setLoading(false);
-  };
-
-  useEffect(() => { analyze(); }, []);
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 520, maxHeight: '88vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .22s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>💡 AI Price Suggester</div><div style={{ fontSize: 12, color: 'var(--gy2)', marginTop: 1 }}>Are you charging enough?</div></div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '20px 22px' }}>
-          {loading ? <div style={{ textAlign: 'center', padding: '40px 0' }}>
-            <div style={{ display: 'flex', gap: 7, justifyContent: 'center', marginBottom: 14 }}><div className="dot" /><div className="dot" /><div className="dot" /></div>
-            <div style={{ fontSize: 14, color: 'var(--gy)' }}>AI analyzing your pricing history…</div>
-          </div> : <div style={{ fontSize: 14, color: 'var(--dk)', lineHeight: 1.85, whiteSpace: 'pre-wrap' }}>{suggestions}</div>}
-          <div style={{ display: 'flex', gap: 8, marginTop: 20 }}>
-            <Btn v="ghost" sz="sm" onClick={analyze}>🔄 Re-analyze</Btn>
-            <Btn v="primary" sz="sm" onClick={onClose} style={{ flex: 1, justifyContent: 'center' }}>Got It ✓</Btn>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── 8. KHATA LEDGER VIEW ──
-function KhataPage({ clis, invs, exps, biz }) {
-  const [sel, setSel] = useState(null);
-  const cur = biz.currency || 'INR';
-  if (sel) {
-    const ci = invs.filter(i => i.to?.name === sel.name);
-    const entries = [
-      ...ci.map(i => ({ date: i.date, type: 'invoice', desc: `Invoice ${i.number}`, debit: i.total, credit: 0, status: i.status, paid: i.paid || 0 })),
-      ...ci.filter(i => i.paid > 0).map(i => ({ date: i.paidOn || i.date, type: 'payment', desc: `Payment for ${i.number}`, debit: 0, credit: i.paid || i.total })),
-    ].sort((a, b) => new Date(a.date) - new Date(b.date));
-    let running = 0;
-    const rows = entries.map(e => { running += e.debit - e.credit; return { ...e, balance: running }; });
-    const total = ci.reduce((a, i) => a + i.total, 0);
-    const paid2 = ci.filter(i => i.status === 'paid').reduce((a, i) => a + i.total, 0);
-    return (
-      <div className="fu">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
-          <Btn v="ghost" sz="sm" onClick={() => setSel(null)}>← All Clients</Btn>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 18 }}>📒 Khata — {sel.name}</div>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 16 }}>
-          <div style={{ background: 'white', padding: '14px 16px', borderRadius: 'var(--r-md)', border: '1px solid var(--bd)' }}><div style={{ fontSize: 10, color: 'var(--gy2)', fontWeight: 700, textTransform: 'uppercase', marginBottom: 3 }}>Total Billed</div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 18, color: 'var(--dk)' }}>{INR(total, cur)}</div></div>
-          <div style={{ background: 'white', padding: '14px 16px', borderRadius: 'var(--r-md)', border: '1px solid var(--bd)' }}><div style={{ fontSize: 10, color: 'var(--gy2)', fontWeight: 700, textTransform: 'uppercase', marginBottom: 3 }}>Total Received</div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 18, color: 'var(--gn)' }}>{INR(paid2, cur)}</div></div>
-          <div style={{ background: 'white', padding: '14px 16px', borderRadius: 'var(--r-md)', border: `1px solid ${total - paid2 > 0 ? 'var(--rd)' : 'var(--gn)'}` }}><div style={{ fontSize: 10, color: 'var(--gy2)', fontWeight: 700, textTransform: 'uppercase', marginBottom: 3 }}>Balance</div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 18, color: total - paid2 > 0 ? 'var(--rd)' : 'var(--gn)' }}>{INR(total - paid2, cur)}</div></div>
-        </div>
-        <Card>
-          <div style={{ padding: '13px 18px', borderBottom: '1px solid var(--bd)', fontWeight: 700, fontSize: 13.5, background: 'var(--gy6)', borderRadius: 'var(--r-md) var(--r-md) 0 0', display: 'flex', gap: 8 }}>
-            <span style={{ flex: 1 }}>📒 Ledger Account — {sel.name}</span>
-          </div>
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-              <thead><tr style={{ background: '#f8fafc', borderBottom: '2px solid var(--bd)' }}>
-                {['Date', 'Description', 'Debit (Dr)', 'Credit (Cr)', 'Balance'].map(h => <th key={h} style={{ padding: '10px 14px', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', color: 'var(--gy2)', textAlign: 'left' }}>{h}</th>)}
-              </tr></thead>
-              <tbody>
-                {rows.length === 0 ? <tr><td colSpan={5}><div style={{ textAlign: 'center', padding: 32, color: 'var(--gy2)' }}>No transactions yet.</div></td></tr> :
-                  rows.map((r, i) => <tr key={i} style={{ borderBottom: '1px solid var(--bd)', background: r.type === 'payment' ? '#f0fdf4' : 'white' }}>
-                    <td style={{ padding: '10px 14px', fontSize: 12.5 }}>{FD(r.date, biz.dateFormat)}</td>
-                    <td style={{ padding: '10px 14px', fontSize: 13, fontWeight: r.type === 'payment' ? 600 : 400, color: r.type === 'payment' ? 'var(--gn)' : 'var(--dk)' }}>{r.desc}</td>
-                    <td style={{ padding: '10px 14px', fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 13, color: 'var(--rd)' }}>{r.debit > 0 ? INR(r.debit, cur) : '—'}</td>
-                    <td style={{ padding: '10px 14px', fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 13, color: 'var(--gn)' }}>{r.credit > 0 ? INR(r.credit, cur) : '—'}</td>
-                    <td style={{ padding: '10px 14px', fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 13.5, color: r.balance > 0 ? 'var(--rd)' : 'var(--gn)' }}>{INR(Math.abs(r.balance), cur)} {r.balance > 0 ? 'Dr' : 'Cr'}</td>
-                  </tr>)}
-              </tbody>
-            </table>
-          </div>
-        </Card>
-      </div>
-    );
-  }
-  return (
-    <div className="fu">
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18 }}>
-        <div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 20 }}>📒 Khata Book</div><div style={{ fontSize: 13, color: 'var(--gy2)', marginTop: 2 }}>Traditional ledger — per client running balance</div></div>
-      </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14 }}>
-        {!clis.length ? <div style={{ gridColumn: '1/-1', textAlign: 'center', padding: '52px 0', color: 'var(--gy2)' }}><div style={{ fontSize: 42, marginBottom: 10 }}>📒</div><div style={{ fontWeight: 700, fontSize: 15, color: 'var(--dk3)' }}>No clients yet. Add clients to see Khata.</div></div> :
-          clis.map(c => {
-            const health = getClientHealth(c, invs);
-            const ci2 = invs.filter(i => i.to?.name === c.name);
-            const bal = ci2.reduce((a, i) => a + i.total - (i.paid || (i.status === 'paid' ? i.total : 0)), 0);
-            return <div key={c.id} className="ch" style={{ background: 'white', border: '1.5px solid var(--bd)', borderRadius: 'var(--r-md)', padding: 18, cursor: 'pointer', boxShadow: 'var(--sh-xs)' }} onClick={() => setSel(c)}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: 12 }}>
-                <div style={{ width: 40, height: 40, borderRadius: 'var(--r)', background: 'var(--orl)', color: 'var(--or)', fontWeight: 900, fontSize: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Syne,sans-serif', flexShrink: 0 }}>{INI(c.name)}</div>
-                <div style={{ flex: 1 }}><div style={{ fontWeight: 700, fontSize: 13.5 }}>{c.name}</div><div style={{ fontSize: 11, color: 'var(--gy2)' }}>{ci2.length} transactions</div></div>
-                <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 14, color: health.color, background: health.color + '18', padding: '2px 9px', borderRadius: 100 }}>{health.grade}</div>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderTop: '1px solid var(--bd)' }}>
-                <div style={{ fontSize: 11, color: 'var(--gy2)' }}>Balance Due</div>
-                <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 15, color: bal > 0 ? 'var(--rd)' : 'var(--gn)' }}>{INR(Math.abs(bal), cur)} {bal > 0 ? 'Dr' : bal < 0 ? 'Cr' : '✓'}</div>
-              </div>
-            </div>;
-          })}
-      </div>
-    </div>
-  );
-}
-
-// ── 9. PUBLIC PROFILE PAGE GENERATOR ──
-function PublicProfile({ biz, invs, onClose }) {
-  const slug = (biz.name || 'my-business').toLowerCase().replace(/[^a-z0-9]+/g, '-');
-  const profileData = { name: biz.name, gstin: biz.gstin, phone: biz.phone, email: biz.email, website: biz.website, upi: biz.upi, totalInvoices: invs.length, since: invs.length ? invs[invs.length - 1]?.date?.split('-')[0] : new Date().getFullYear() };
-  const profileHTML = `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>${biz.name} — Business Profile</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Syne:wght@800;900&display=swap" rel="stylesheet"><style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:Inter,sans-serif;background:#f8fafc;color:#0f172a;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}.card{background:white;border-radius:24px;padding:40px;max-width:480px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.1);text-align:center;}.badge{background:#fff4ef;color:#FF6B35;padding:5px 14px;border-radius:100px;font-size:12px;font-weight:700;display:inline-block;margin-bottom:20px;}.logo{width:80px;height:80px;border-radius:20px;background:#FF6B35;color:white;font-family:Syne,sans-serif;font-weight:900;font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}.name{font-family:Syne,sans-serif;font-size:26px;font-weight:900;margin-bottom:6px;}.gstin{font-size:12px;color:#94a3b8;margin-bottom:24px;}.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px;}.stat{background:#f8fafc;border-radius:12px;padding:14px;}.stat-num{font-family:Syne,sans-serif;font-size:20px;font-weight:900;color:#FF6B35;}.stat-lbl{font-size:11px;color:#94a3b8;margin-top:3px;}.info{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}.info-row{display:flex;align-items:center;gap:10px;font-size:14px;text-align:left;padding:10px 14px;background:#f8fafc;border-radius:10px;}.info-icon{font-size:18px;flex-shrink:0;}.cta{display:block;padding:14px;background:#FF6B35;color:white;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;margin-bottom:10px;}.cta2{display:block;padding:12px;background:white;color:#0f172a;border-radius:12px;font-weight:600;font-size:14px;text-decoration:none;border:1.5px solid #e2e8f0;}.footer{margin-top:20px;font-size:11px;color:#cbd5e1;}</style></head><body><div class="card"><span class="badge">✅ Verified Business</span>${biz.logo ? `<img src="${biz.logo}" style="width:80px;height:80px;border-radius:20px;object-fit:cover;margin:0 auto 16px;display:block;"/>` : `<div class="logo">${INI(biz.name)}</div>`}<div class="name">${biz.name}</div><div class="gstin">${biz.gstin ? 'GSTIN: ' + biz.gstin : 'Indian Business'}</div><div class="stats"><div class="stat"><div class="stat-num">${profileData.totalInvoices}+</div><div class="stat-lbl">Invoices</div></div><div class="stat"><div class="stat-num">${profileData.since}</div><div class="stat-lbl">Since</div></div><div class="stat"><div class="stat-num">GST</div><div class="stat-lbl">Compliant</div></div></div><div class="info">${biz.phone ? `<div class="info-row"><span class="info-icon">📞</span>${biz.phone}</div>` : ''}${biz.email ? `<div class="info-row"><span class="info-icon">📧</span>${biz.email}</div>` : ''}${biz.upi ? `<div class="info-row"><span class="info-icon">📱</span>UPI: ${biz.upi}</div>` : ''}${biz.website ? `<div class="info-row"><span class="info-icon">🌐</span>${biz.website}</div>` : ''}</div>${biz.phone ? `<a href="tel:${biz.phone}" class="cta">📞 Call Now</a>` : ''}${biz.email ? `<a href="mailto:${biz.email}" class="cta2">📧 Send Email</a>` : ''}<div class="footer">Powered by InvoiceBolt · invoicebolt.in</div></div></body></html>`;
-
-  const download = () => {
-    const blob = new Blob([profileHTML], { type: 'text/html' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `${slug}-profile.html`;
-    a.click();
-  };
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 520, boxShadow: 'var(--sh-xl)', animation: 'slideUp .22s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>🌐 Your Public Business Profile</div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '20px 22px' }}>
-          <div style={{ background: 'var(--gy5)', borderRadius: 'var(--r-md)', padding: '20px', marginBottom: 18, textAlign: 'center', border: '1.5px solid var(--bd)' }}>
-            <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--dk)', marginBottom: 6 }}>{biz.name || 'My Business'}</div>
-            <div style={{ fontSize: 12, color: 'var(--gy2)', marginBottom: 14 }}>Your professional business profile page</div>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: 14, fontSize: 12.5 }}>
-              {biz.gstin && <span>✅ GSTIN Verified</span>}
-              <span>📞 {biz.phone || 'Add phone'}</span>
-              <span>📧 {biz.email || 'Add email'}</span>
-            </div>
-          </div>
-          <div style={{ padding: '13px 16px', background: 'var(--bll)', borderRadius: 'var(--r-md)', marginBottom: 16, fontSize: 13, color: 'var(--bl)', lineHeight: 1.65 }}>
-            💡 Download this HTML file and host it as <b>your free business profile page</b>. Upload to GitHub Pages or Netlify for a free URL like <b>{slug}.netlify.app</b>. Share with clients!
-          </div>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <Btn v="ghost" onClick={onClose} style={{ flex: 1, justifyContent: 'center' }}>Close</Btn>
-            <Btn v="primary" onClick={download} style={{ flex: 2, justifyContent: 'center' }}>📥 Download Profile Page</Btn>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── 10. BANK STATEMENT RECONCILIATION ──
-function BankRecon({ invs, setInvs, toast, onClose }) {
-  const [loading, setLoading] = useState(false);
-  const [matches, setMatches] = useState([]);
-  const [done, setDone] = useState(false);
-
-  const handleFile = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    setLoading(true);
-    const text = await file.text();
-    const unpaid = invs.filter(i => i.status !== 'paid' && i.type === 'invoice').slice(0, 20);
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 800, system: 'You match bank statement entries to unpaid invoices. Respond ONLY with JSON array: [{"invoiceId":"...","amount":0,"date":"YYYY-MM-DD","confidence":"high/medium"}]. Match by amount and approximate date. Only include high-confidence matches.', messages: [{ role: 'user', content: `Bank statement (first 3000 chars): ${text.slice(0, 3000)}\n\nUnpaid invoices: ${JSON.stringify(unpaid.map(i => ({ id: i.id, number: i.number, client: i.to?.name, amount: i.total, due: i.due })))}` }] }) });
-      const d = await res.json();
-      const raw = d.content?.[0]?.text || '[]';
-      const jm = raw.match(/\[[\s\S]*\]/);
-      if (jm) {
-        const found = JSON.parse(jm[0]);
-        setMatches(found.map(m => ({ ...m, inv: invs.find(i => i.id === m.invoiceId) })).filter(m => m.inv));
-      }
-    } catch { toast('Could not parse statement.', 'error'); }
-    setLoading(false);
-  };
-
-  const confirmAll = () => {
-    matches.forEach(m => {
-      setInvs(p => p.map(i => i.id === m.invoiceId ? { ...i, status: 'paid', paid: i.total, paidOn: m.date } : i));
-    });
-    toast(`${matches.length} invoices marked as paid!`, 'success');
-    setDone(true);
-  };
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 540, maxHeight: '88vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .22s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>🏦 Bank Statement Reconciliation</div><div style={{ fontSize: 12, color: 'var(--gy2)', marginTop: 1 }}>Upload CSV → AI matches payments to invoices</div></div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '20px 22px' }}>
-          {!done ? <>
-            <div style={{ padding: '13px 16px', background: 'var(--bll)', borderRadius: 'var(--r-md)', marginBottom: 16, fontSize: 13, color: 'var(--bl)', lineHeight: 1.65 }}>
-              💡 Download your bank statement as CSV from internet banking → upload here → AI will automatically match payments to your unpaid invoices.
-            </div>
-            <input type="file" accept=".csv,.txt,.xls,.xlsx" onChange={handleFile} style={{ marginBottom: 16, fontSize: 13 }} />
-            {loading && <div style={{ textAlign: 'center', padding: '24px 0' }}>
-              <div style={{ display: 'flex', gap: 7, justifyContent: 'center', marginBottom: 10 }}><div className="dot" /><div className="dot" /><div className="dot" /></div>
-              <div style={{ fontSize: 14, color: 'var(--gy)' }}>AI is matching payments to invoices…</div>
-            </div>}
-            {matches.length > 0 && <>
-              <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 12, color: 'var(--gn)' }}>✅ Found {matches.length} payment match{matches.length !== 1 ? 'es' : ''}!</div>
-              {matches.map((m, i) => <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', background: 'var(--gnl)', borderRadius: 'var(--r-md)', marginBottom: 8, border: '1px solid #bbf7d0' }}>
-                <div><div style={{ fontWeight: 700, fontSize: 13 }}>{m.inv?.number} — {m.inv?.to?.name}</div><div style={{ fontSize: 11.5, color: 'var(--gy)' }}>Payment on {m.date}</div></div>
-                <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 14, color: 'var(--gn)' }}>{INR(m.amount)}</div>
-              </div>)}
-              <Btn v="primary" onClick={confirmAll} style={{ width: '100%', justifyContent: 'center', marginTop: 8 }}>✅ Mark All as Paid</Btn>
-            </>}
-            {!loading && matches.length === 0 && <div style={{ textAlign: 'center', padding: '20px 0', color: 'var(--gy2)', fontSize: 13 }}>Upload a bank statement CSV to start matching.</div>}
-          </> : <div style={{ textAlign: 'center', padding: '32px 0' }}>
-            <div style={{ fontSize: 48, marginBottom: 14 }}>✅</div>
-            <div style={{ fontWeight: 700, fontSize: 16, color: 'var(--gn)', marginBottom: 6 }}>{matches.length} invoices reconciled!</div>
-            <div style={{ fontSize: 13, color: 'var(--gy2)', marginBottom: 20 }}>All matched payments have been marked as paid.</div>
-            <Btn v="primary" onClick={onClose}>Done</Btn>
-          </div>}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ══════════════════════════════════════════
-// 15 NEW DAILY-USE FEATURES
-// ══════════════════════════════════════════
-
-// ── FEATURE 1: SMART ITEM SUGGESTIONS ──
-function ItemSuggest({ prods, invs, value, onSelect }) {
-  const top = useMemo(() => {
-    const freq = {};
-    invs.forEach(inv => (inv.items || []).forEach(it => {
-      if (it.desc) freq[it.desc] = (freq[it.desc] || 0) + 1;
-    }));
-    return Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([desc, cnt]) => {
-      const prod = prods.find(p => p.name === desc);
-      return { desc, cnt, rate: prod?.rate || 0, cgst: prod?.cgst || 9, sgst: prod?.sgst || 9, unit: prod?.unit || 'pcs', hsn: prod?.hsn || '' };
-    });
-  }, [invs, prods]);
-  const filtered = value ? top.filter(t => t.desc.toLowerCase().includes(value.toLowerCase())) : top;
-  if (!filtered.length) return null;
-  return (
-    <div style={{ position: 'absolute', top: '100%', left: 0, right: 0, background: 'white', border: '1.5px solid var(--or)', borderRadius: 'var(--r-md)', boxShadow: 'var(--sh-lg)', zIndex: 200, maxHeight: 220, overflowY: 'auto', marginTop: 2 }}>
-      {filtered.map((s, i) => (
-        <div key={i} onClick={() => onSelect(s)} style={{ padding: '9px 13px', cursor: 'pointer', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', transition: 'background .15s' }}
-          onMouseEnter={e => e.currentTarget.style.background = 'var(--orl)'}
-          onMouseLeave={e => e.currentTarget.style.background = 'white'}>
-          <div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--dk)' }}>{s.desc}</div>
-            <div style={{ fontSize: 11, color: 'var(--gy2)', marginTop: 1 }}>Used {s.cnt}× · {s.cgst + s.sgst}% GST · {s.unit}</div>
-          </div>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 13, color: 'var(--or)' }}>{s.rate > 0 ? INR(s.rate) : ''}</div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// ── FEATURE 2: QUICK INVOICE (15 SEC MODE) ──
-function QuickInvoice({ biz, clis, prods, invs, onSave, toast, onClose }) {
-  const [client, setClient] = useState('');
-  const [amount, setAmount] = useState('');
-  const [gst, setGst] = useState(18);
-  const [desc, setDesc] = useState('');
-  const [showSug, setShowSug] = useState(false);
-  const nums = invs.map(i => parseInt((i.number || '').replace(/\D/g, '')) || 0);
-  const nextNum = 'INV-' + String((nums.length ? Math.max(...nums) : 0) + 1).padStart(3, '0');
-  const base = parseFloat(amount) || 0;
-  const cgst = base * (gst / 2) / 100;
-  const sgst = base * (gst / 2) / 100;
-  const total = base + cgst + sgst;
-  const cli = clis.find(c => c.name.toLowerCase().includes(client.toLowerCase()) && client.length > 1);
-
-  const save = () => {
-    if (!client || !amount) { toast('Enter client and amount.', 'error'); return; }
-    const inv = {
-      id: UID(), number: nextNum, type: 'invoice', date: TD(), due: AD(TD(), 30), status: 'unpaid', currency: biz.currency || 'INR', gstType: 'cgst_sgst', createdAt: Date.now(),
-      from: { name: biz.name, email: biz.email, phone: biz.phone, address: biz.address, gstin: biz.gstin, pan: biz.pan },
-      to: { name: cli?.name || client, email: cli?.email || '', phone: cli?.phone || '', address: cli?.address || '', gstin: cli?.gstin || '' },
-      items: [{ id: UID(), desc: desc || 'Services', qty: 1, rate: base, unit: 'pcs', hsn: '', cgst: gst / 2, sgst: gst / 2, igst: 0, disc: 0, note: '' }],
-      notes: biz.defaultNotes || '', footer: biz.footer || 'Thank you for your business!',
-      bankName: biz.bankName || '', bankAcc: biz.bankAcc || '', bankIFSC: biz.bankIFSC || '', upi: biz.upi || '',
-      logo: biz.logo || '', signature: biz.signature || '', po: '', shipping: 0, paid: 0,
-      sub: base, subtotal: base, totalCGST: cgst, totalSGST: sgst, totalIGST: 0, totalDiscount: 0, total, grand: total, bal: total, dc: 0, cg: cgst, sg: sgst, ig: 0
-    };
-    onSave(inv);
-    onClose();
-  };
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.75)', zIndex: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(10px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 420, boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease', overflow: 'hidden' }}>
-        <div style={{ background: 'var(--or)', padding: '18px 22px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 18, color: 'white' }}>⚡ Quick Invoice</div><div style={{ fontSize: 12, color: 'rgba(255,255,255,.75)', marginTop: 2 }}>Create in 15 seconds</div></div>
-          <button onClick={onClose} style={{ background: 'rgba(255,255,255,.2)', border: 'none', color: 'white', width: 30, height: 30, borderRadius: '50%', cursor: 'pointer', fontSize: 16 }}>✕</button>
-        </div>
-        <div style={{ padding: '22px' }}>
-          <div style={{ marginBottom: 14 }}>
-            <label style={{ fontSize: 11, fontWeight: 700, color: 'var(--gy)', textTransform: 'uppercase', letterSpacing: '.5px', display: 'block', marginBottom: 6 }}>Client Name</label>
-            <div style={{ position: 'relative' }}>
-              <Inp value={client} onChange={e => setClient(e.target.value)} placeholder="Type client name…" style={{ fontSize: 15, padding: '12px 14px' }} />
-              {client.length > 1 && clis.filter(c => c.name.toLowerCase().includes(client.toLowerCase())).length > 0 && (
-                <div style={{ position: 'absolute', top: '100%', left: 0, right: 0, background: 'white', border: '1.5px solid var(--or)', borderRadius: 'var(--r-md)', zIndex: 10, boxShadow: 'var(--sh-lg)', marginTop: 2 }}>
-                  {clis.filter(c => c.name.toLowerCase().includes(client.toLowerCase())).slice(0, 4).map(c => (
-                    <div key={c.id} onClick={() => setClient(c.name)} style={{ padding: '9px 13px', cursor: 'pointer', fontSize: 13, fontWeight: 500, borderBottom: '1px solid var(--bd)' }}
-                      onMouseEnter={e => e.currentTarget.style.background = 'var(--orl)'}
-                      onMouseLeave={e => e.currentTarget.style.background = 'white'}>
-                      {c.name} <span style={{ fontSize: 11, color: 'var(--gy2)' }}>{c.phone}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-          <div style={{ marginBottom: 14 }}>
-            <label style={{ fontSize: 11, fontWeight: 700, color: 'var(--gy)', textTransform: 'uppercase', letterSpacing: '.5px', display: 'block', marginBottom: 6 }}>Description</label>
-            <Inp value={desc} onChange={e => setDesc(e.target.value)} placeholder="What did you provide?" style={{ fontSize: 14 }} />
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 18 }}>
-            <div>
-              <label style={{ fontSize: 11, fontWeight: 700, color: 'var(--gy)', textTransform: 'uppercase', letterSpacing: '.5px', display: 'block', marginBottom: 6 }}>Amount (₹)</label>
-              <Inp type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="25000" style={{ fontSize: 15, fontWeight: 700 }} />
-            </div>
-            <div>
-              <label style={{ fontSize: 11, fontWeight: 700, color: 'var(--gy)', textTransform: 'uppercase', letterSpacing: '.5px', display: 'block', marginBottom: 6 }}>GST %</label>
-              <Sl value={gst} onChange={e => setGst(+e.target.value)} style={{ fontSize: 14 }}>
-                {[0, 5, 12, 18, 28].map(r => <option key={r} value={r}>{r}%</option>)}
-              </Sl>
-            </div>
-          </div>
-          {amount > 0 && (
-            <div style={{ background: 'var(--orl)', border: '1.5px solid var(--orb)', borderRadius: 'var(--r-md)', padding: '14px 16px', marginBottom: 18 }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12.5, color: 'var(--gy)', marginBottom: 5 }}><span>Subtotal</span><span>{INR(base)}</span></div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12.5, color: 'var(--gy)', marginBottom: 5 }}><span>GST ({gst}%)</span><span>{INR(cgst + sgst)}</span></div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 20, color: 'var(--or)', borderTop: '1.5px solid var(--orb)', paddingTop: 10, marginTop: 5 }}><span>Total</span><span>{INR(total)}</span></div>
-            </div>
-          )}
-          <button onClick={save} style={{ width: '100%', padding: '14px', background: 'var(--or)', color: 'white', border: 'none', borderRadius: 'var(--r-md)', fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 17, cursor: 'pointer', boxShadow: '0 6px 20px rgba(255,107,53,.4)', transition: 'all .2s' }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(255,107,53,.5)'; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 6px 20px rgba(255,107,53,.4)'; }}>
-            ⚡ Create Invoice — {nextNum}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── FEATURE 3: GST CALCULATOR WIDGET ──
-
-</script>
-<script type="text/babel">
-
-
-function GSTCalc({ onClose }) {
-  const [amt, setAmt] = useState('');
-  const [rate, setRate] = useState(18);
-  const [incl, setIncl] = useState(false);
-  const base = incl ? parseFloat(amt || 0) / (1 + rate / 100) : parseFloat(amt || 0);
-  const tax = base * rate / 100;
-  const cgst = tax / 2; const sgst = tax / 2;
-  const total = base + tax;
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.7)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 380, boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>🧮 GST Calculator</div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '20px 22px' }}>
-          <div style={{ marginBottom: 13 }}>
-            <label style={{ fontSize: 11, fontWeight: 700, color: 'var(--gy)', textTransform: 'uppercase', letterSpacing: '.5px', display: 'block', marginBottom: 6 }}>Amount (₹)</label>
-            <Inp type="number" value={amt} onChange={e => setAmt(e.target.value)} placeholder="Enter amount…" style={{ fontSize: 18, fontWeight: 700, padding: '12px 14px' }} />
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
-            <div>
-              <label style={{ fontSize: 11, fontWeight: 700, color: 'var(--gy)', textTransform: 'uppercase', letterSpacing: '.5px', display: 'block', marginBottom: 6 }}>GST Rate</label>
-              <Sl value={rate} onChange={e => setRate(+e.target.value)}>
-                {[0, 0.1, 0.25, 1, 1.5, 3, 5, 6, 7.5, 12, 18, 28].map(r => <option key={r} value={r}>{r}%</option>)}
-              </Sl>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', fontSize: 13, fontWeight: 500, color: 'var(--dk)', marginBottom: 8 }}>
-                <label className="tg"><input type="checkbox" checked={incl} onChange={e => setIncl(e.target.checked)} /><span className="tgl" /></label>
-                GST Inclusive
-              </label>
-            </div>
-          </div>
-          {amt > 0 && (
-            <div style={{ background: '#f8fafc', borderRadius: 'var(--r-md)', padding: '16px', border: '1.5px solid var(--bd)' }}>
-              {[['Base Amount', INR(base)], ['CGST ' + (rate / 2) + '%', INR(cgst)], ['SGST ' + (rate / 2) + '%', INR(sgst)], ['Total GST', INR(tax)]].map(([l, v]) => (
-                <div key={l} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', fontSize: 13, borderBottom: '1px solid var(--bd)', color: 'var(--dk3)' }}>
-                  <span style={{ color: 'var(--gy)' }}>{l}</span><span style={{ fontWeight: 600 }}>{v}</span>
-                </div>
-              ))}
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0 0', fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 20, color: 'var(--or)' }}>
-                <span>Grand Total</span><span>{INR(incl ? parseFloat(amt || 0) : total)}</span>
-              </div>
-            </div>
-          )}
-          <div style={{ marginTop: 14, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-            <button onClick={() => setAmt('')} style={{ padding: '10px', background: 'var(--gy5)', border: '1.5px solid var(--bd)', borderRadius: 'var(--r-sm)', cursor: 'pointer', fontFamily: 'Inter,sans-serif', fontWeight: 600, fontSize: 13 }}>Clear</button>
-            <button onClick={() => navigator.clipboard.writeText(`Base: ${INR(base)}\nGST (${rate}%): ${INR(tax)}\nTotal: ${INR(total)}`).then(() => {})} style={{ padding: '10px', background: 'var(--or)', border: 'none', borderRadius: 'var(--r-sm)', cursor: 'pointer', color: 'white', fontFamily: 'Inter,sans-serif', fontWeight: 700, fontSize: 13 }}>📋 Copy</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── FEATURE 4: DUE DATE NOTIFICATION SYSTEM ──
-function setupNotifications(invs, toast) {
-  if (!('Notification' in window)) return;
-  const today = TD();
-  const overdue = invs.filter(i => i.type === 'invoice' && i.status !== 'paid' && i.due && i.due < today);
-  const dueToday = invs.filter(i => i.type === 'invoice' && i.status !== 'paid' && i.due === today);
-  const due3 = invs.filter(i => i.type === 'invoice' && i.status !== 'paid' && i.due && i.due > today && Math.ceil((new Date(i.due) - Date.now()) / 86400000) <= 3);
-  if (overdue.length > 0) toast(`🔴 ${overdue.length} invoice${overdue.length > 1 ? 's' : ''} overdue — ${INR(overdue.reduce((a, i) => a + i.total, 0))} pending`, 'error');
-  else if (dueToday.length > 0) toast(`🟡 ${dueToday.length} invoice${dueToday.length > 1 ? 's' : ''} due TODAY — ${INR(dueToday.reduce((a, i) => a + i.total, 0))}`, '');
-  else if (due3.length > 0) toast(`📅 ${due3.length} invoice${due3.length > 1 ? 's' : ''} due in 3 days`, '');
-}
-
-// ── FEATURE 5: OVERDUE ESCALATION ENGINE ──
-function EscalationEngine({ inv, biz, onClose, toast }) {
-  const [loading, setLoading] = useState(false);
-  const [msgs, setMsgs] = useState({});
-  const days = inv?.due ? Math.floor((Date.now() - new Date(inv.due)) / 86400000) : 0;
-  const level = days <= 0 ? 'reminder' : days <= 7 ? 'polite' : days <= 15 ? 'firm' : days <= 30 ? 'urgent' : 'legal';
-  const levelInfo = { reminder: { label: 'Payment Reminder', color: 'var(--bl)', emoji: '📋' }, polite: { label: 'Polite Follow-up', color: 'var(--yl)', emoji: '🙏' }, firm: { label: 'Firm Reminder', color: 'var(--or)', emoji: '⚠️' }, urgent: { label: 'Urgent Notice', color: 'var(--rd)', emoji: '🚨' }, legal: { label: 'Legal Notice Template', color: '#7c3aed', emoji: '⚖️' } };
-  const t = calcT(inv?.items || [], inv?.shipping, inv?.paid);
-
-  const generate = async (tone) => {
-    setLoading(tone);
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 350, system: `You write payment reminder messages for Indian businesses. Tone: ${tone}. Write in Hindi/Hinglish mix. Keep under 5 lines. Use emoji. Include invoice number, amount, client name. If legal tone, mention "legal action" formally.`, messages: [{ role: 'user', content: `Invoice: ${inv?.number}, Client: ${inv?.to?.name}, Amount: ${INR(Math.max(0, t.bal))}, Overdue: ${days} days, Sender: ${inv?.from?.name || biz?.name}, UPI: ${biz?.upi || ''}` }] }) });
-      const d = await res.json();
-      setMsgs(p => ({ ...p, [tone]: d.content?.[0]?.text || 'Error.' }));
-    } catch { setMsgs(p => ({ ...p, [tone]: 'Network error.' })); }
-    setLoading(false);
-  };
-
-  useEffect(() => { if (inv) generate(level); }, []);
-
-  const send = (msg) => {
-    const phone = inv?.to?.phone?.replace(/\D/g, '');
-    navigator.clipboard.writeText(msg);
-    toast('Copied!', 'success');
-    if (phone) window.open(`https://wa.me/91${phone}?text=${encodeURIComponent(msg)}`, '_blank');
-    else window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
-  };
-
-  const li = levelInfo[level];
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 500, maxHeight: '88vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>{li.emoji} Collection Engine</div><div style={{ fontSize: 12, color: li.color, marginTop: 2, fontWeight: 600 }}>{li.label} — {days > 0 ? days + ' days overdue' : 'Due soon'}</div></div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '18px 22px' }}>
-          <div style={{ display: 'flex', gap: 6, marginBottom: 16, flexWrap: 'wrap' }}>
-            {Object.entries(levelInfo).map(([k, v]) => (
-              <button key={k} onClick={() => generate(k)} style={{ padding: '5px 12px', borderRadius: 100, border: '1.5px solid', borderColor: level === k ? v.color : 'var(--bd)', background: level === k ? v.color : 'white', color: level === k ? 'white' : 'var(--gy)', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>{v.emoji} {v.label}</button>
-            ))}
-          </div>
-          {loading === level ? (
-            <div style={{ textAlign: 'center', padding: '28px 0' }}><div style={{ display: 'flex', gap: 6, justifyContent: 'center', marginBottom: 10 }}><div className="dot" /><div className="dot" /><div className="dot" /></div><div style={{ fontSize: 13, color: 'var(--gy)' }}>Writing message…</div></div>
-          ) : msgs[level] ? (
-            <>
-              <div style={{ background: '#f0fdf4', border: '1.5px solid #bbf7d0', borderRadius: 'var(--r-md)', padding: 16, marginBottom: 14, fontSize: 13.5, color: '#166534', lineHeight: 1.75, whiteSpace: 'pre-wrap' }}>{msgs[level]}</div>
-              <div style={{ display: 'flex', gap: 8 }}>
-                <Btn v="ghost" sz="sm" onClick={() => generate(level)}>🔄 New Version</Btn>
-                <Btn v="primary" onClick={() => send(msgs[level])} style={{ flex: 1, justifyContent: 'center' }}>📱 Send on WhatsApp</Btn>
-              </div>
-            </>
-          ) : null}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── FEATURE 6: PAYMENT LINK GENERATOR ──
-function PaymentLink({ inv, biz, onClose, toast }) {
-  const t = calcT(inv?.items || [], inv?.shipping, inv?.paid);
-  const amount = Math.max(0, t.bal);
-  const upi = biz?.upi || inv?.upi || '';
-  const upiLink = upi ? `upi://pay?pa=${upi}&pn=${encodeURIComponent(biz?.name || '')}&am=${amount.toFixed(2)}&cu=INR&tn=${encodeURIComponent('Payment for ' + (inv?.number || ''))}` : '';
-  const whatsappMsg = `💳 Pay for Invoice ${inv?.number}\nAmount: *${INR(amount)}*\n${upi ? `\nUPI ID: *${upi}*\nOr use link: ${upiLink}` : ''}\n\n_${biz?.name || 'InvoiceBolt'}_`;
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 420, boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>💳 Payment Link</div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '22px' }}>
-          <div style={{ textAlign: 'center', marginBottom: 20 }}>
-            <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 32, color: 'var(--or)', letterSpacing: '-1.5px', marginBottom: 4 }}>{INR(amount)}</div>
-            <div style={{ fontSize: 13, color: 'var(--gy2)' }}>Due for {inv?.number} · {inv?.to?.name}</div>
-          </div>
-          {upi ? (
-            <>
-              <div style={{ background: 'var(--gy5)', borderRadius: 'var(--r-md)', padding: '14px', marginBottom: 14, textAlign: 'center', border: '1.5px solid var(--bd)' }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--gy2)', textTransform: 'uppercase', letterSpacing: '.5px', marginBottom: 6 }}>UPI ID</div>
-                <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17, color: 'var(--dk)' }}>{upi}</div>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
-                <a href={upiLink} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '13px', background: '#075e54', color: 'white', borderRadius: 'var(--r-md)', fontWeight: 700, fontSize: 15, textDecoration: 'none', transition: 'all .2s' }}>📱 Open UPI App & Pay</a>
-                <button onClick={() => { navigator.clipboard.writeText(upi); toast('UPI ID copied!', 'success'); }} style={{ padding: '12px', background: 'white', border: '1.5px solid var(--bd)', borderRadius: 'var(--r-md)', fontWeight: 600, fontSize: 14, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>📋 Copy UPI ID</button>
-                <button onClick={() => { window.open('https://wa.me/?text=' + encodeURIComponent(whatsappMsg), '_blank'); toast('Opening WhatsApp…', 'success'); }} style={{ padding: '12px', background: '#25d366', color: 'white', border: 'none', borderRadius: 'var(--r-md)', fontWeight: 700, fontSize: 14, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>💬 Send Payment Request on WhatsApp</button>
-              </div>
-            </>
-          ) : (
-            <div style={{ textAlign: 'center', padding: '20px 0' }}>
-              <div style={{ fontSize: 36, marginBottom: 10 }}>🏦</div>
-              <div style={{ fontSize: 14, color: 'var(--gy)', marginBottom: 16 }}>Add your UPI ID in Settings → Bank/UPI to enable payment links.</div>
-              <Btn v="ghost" onClick={onClose}>Close</Btn>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── FEATURE 7: QR DEVICE SYNC ──
-function QRSync({ invs, clis, prods, exps, bizs, onClose, toast }) {
-  const [mode, setMode] = useState('export');
-  const [qr, setQr] = useState('');
-  const [importing, setImporting] = useState(false);
-
-  const generateQR = () => {
-    const data = { invs: invs.slice(0, 50), clis, prods, exps: exps.slice(0, 50), bizs, ts: Date.now() };
-    const json = JSON.stringify(data);
-    const encoded = btoa(encodeURIComponent(json));
-    const url = `${window.location.origin}${window.location.pathname}?sync=${encoded.slice(0, 500)}`;
-    setQr(`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`);
-  };
-
-  const exportData = () => {
-    const data = { invs, clis, prods, exps, bizs, ts: Date.now() };
-    const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'sync-' + TD() + '.json'; a.click();
-    toast('Data exported! Transfer this file to your other device.', 'success');
-  };
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 440, boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>📱 Multi-Device Sync</div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '22px' }}>
-          <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
-            {['export', 'import'].map(m => <button key={m} onClick={() => setMode(m)} style={{ flex: 1, padding: '10px', borderRadius: 'var(--r-sm)', border: '1.5px solid', borderColor: mode === m ? 'var(--or)' : 'var(--bd)', background: mode === m ? 'var(--or)' : 'white', color: mode === m ? 'white' : 'var(--gy)', fontWeight: 700, fontSize: 13, cursor: 'pointer', fontFamily: 'Inter,sans-serif', textTransform: 'capitalize' }}>{m === 'export' ? '📤 This Device' : '📥 New Device'}</button>)}
-          </div>
-          {mode === 'export' ? (
-            <>
-              <div style={{ padding: '13px 16px', background: 'var(--bll)', borderRadius: 'var(--r-md)', marginBottom: 16, fontSize: 13, color: 'var(--bl)', lineHeight: 1.65 }}>
-                📤 Export your data and transfer to any new device. No internet, no cloud, 100% private.
-              </div>
-              <Btn v="primary" onClick={exportData} style={{ width: '100%', justifyContent: 'center', marginBottom: 10 }}>📥 Download Sync File</Btn>
-              <div style={{ fontSize: 12, color: 'var(--gy2)', textAlign: 'center', lineHeight: 1.6 }}>Transfer this JSON file to your phone/laptop via WhatsApp, USB, or email. Then import it on the new device.</div>
-            </>
-          ) : (
-            <>
-              <div style={{ padding: '13px 16px', background: 'var(--gnl)', borderRadius: 'var(--r-md)', marginBottom: 16, fontSize: 13, color: 'var(--gn)', lineHeight: 1.65 }}>
-                📥 Import the sync file exported from your other device. This will merge all data.
-              </div>
-              <input type="file" accept=".json" onChange={e => {
-                const f = e.target.files[0]; if (!f) return; setImporting(true);
-                const r = new FileReader(); r.onload = ev => {
-                  try {
-                    const d = JSON.parse(ev.target.result);
-                    if (d.invs) localStorage.setItem('ibolt_invs', JSON.stringify(d.invs));
-                    if (d.clis) localStorage.setItem('ibolt_clis', JSON.stringify(d.clis));
-                    if (d.prods) localStorage.setItem('ibolt_prods', JSON.stringify(d.prods));
-                    if (d.exps) localStorage.setItem('ibolt_exps', JSON.stringify(d.exps));
-                    if (d.bizs) localStorage.setItem('ibolt_bizs', JSON.stringify(d.bizs));
-                    toast('Synced successfully! Refreshing…', 'success');
-                    setTimeout(() => window.location.reload(), 1500);
-                  } catch { toast('Invalid sync file.', 'error'); }
-                  setImporting(false);
-                }; r.readAsText(f);
-              }} style={{ fontSize: 13, marginBottom: 12 }} />
-              {importing && <div style={{ textAlign: 'center', padding: '16px 0', fontSize: 13, color: 'var(--gy)' }}>Importing…</div>}
-            </>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── FEATURE 8: BULK INVOICE CREATOR ──
-function BulkInvoice({ biz, clis, invs, onSaveMany, toast, onClose }) {
-  const [rows, setRows] = useState([{ client: '', amount: '', gst: 18, desc: 'Services' }]);
-  const [created, setCreated] = useState(false);
-  const addRow = () => setRows(p => [...p, { client: '', amount: '', gst: 18, desc: 'Services' }]);
-  const upRow = (i, f) => setRows(p => { const r = [...p]; r[i] = { ...r[i], ...f }; return r; });
-  const delRow = i => setRows(p => p.filter((_, j) => j !== i));
-  const nums = invs.map(i => parseInt((i.number || '').replace(/\D/g, '')) || 0);
-  let nextN = (nums.length ? Math.max(...nums) : 0) + 1;
-
-  const createAll = () => {
-    const valid = rows.filter(r => r.client && r.amount);
-    if (!valid.length) { toast('Add at least one row with client and amount.', 'error'); return; }
-    const newInvs = valid.map(r => {
-      const base = parseFloat(r.amount); const cgst = base * (r.gst / 2) / 100; const sgst = base * (r.gst / 2) / 100; const total = base + cgst + sgst;
-      const cli = clis.find(c => c.name.toLowerCase().includes(r.client.toLowerCase()));
-      const n = 'INV-' + String(nextN++).padStart(3, '0');
-      return { id: UID(), number: n, type: 'invoice', date: TD(), due: AD(TD(), 30), status: 'unpaid', currency: biz.currency || 'INR', gstType: 'cgst_sgst', createdAt: Date.now(), from: { name: biz.name, gstin: biz.gstin, address: biz.address, phone: biz.phone, email: biz.email, pan: biz.pan }, to: { name: cli?.name || r.client, email: cli?.email || '', phone: cli?.phone || '', address: cli?.address || '', gstin: cli?.gstin || '' }, items: [{ id: UID(), desc: r.desc || 'Services', qty: 1, rate: base, unit: 'pcs', hsn: '', cgst: r.gst / 2, sgst: r.gst / 2, igst: 0, disc: 0 }], notes: biz.defaultNotes || '', footer: biz.footer || '', bankName: biz.bankName || '', bankAcc: biz.bankAcc || '', bankIFSC: biz.bankIFSC || '', upi: biz.upi || '', logo: biz.logo || '', signature: biz.signature || '', po: '', shipping: 0, paid: 0, sub: base, subtotal: base, totalCGST: cgst, totalSGST: sgst, totalIGST: 0, totalDiscount: 0, total, grand: total, bal: total, dc: 0, cg: cgst, sg: sgst, ig: 0 };
-    });
-    onSaveMany(newInvs);
-    setCreated(true);
-    toast(`${newInvs.length} invoices created!`, 'success');
-  };
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 680, maxHeight: '90vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, background: 'white' }}>
-          <div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>📦 Bulk Invoice Creator</div><div style={{ fontSize: 12, color: 'var(--gy2)', marginTop: 1 }}>Create multiple invoices at once</div></div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '20px 22px' }}>
-          {!created ? <>
-            <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 14 }}>
-              <thead><tr style={{ background: 'var(--gy6)', borderBottom: '2px solid var(--bd)' }}>
-                {['Client Name', 'Description', 'Amount (₹)', 'GST %', ''].map(h => <th key={h} style={{ padding: '9px 10px', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', color: 'var(--gy2)', textAlign: 'left' }}>{h}</th>)}
-              </tr></thead>
-              <tbody>
-                {rows.map((r, i) => <tr key={i} style={{ borderBottom: '1px solid var(--bd)' }}>
-                  <td style={{ padding: '7px 6px', width: 180 }}><Inp value={r.client} onChange={e => upRow(i, { client: e.target.value })} placeholder="Client name" style={{ fontSize: 12.5 }} /></td>
-                  <td style={{ padding: '7px 6px' }}><Inp value={r.desc} onChange={e => upRow(i, { desc: e.target.value })} placeholder="Services" style={{ fontSize: 12.5 }} /></td>
-                  <td style={{ padding: '7px 6px', width: 110 }}><Inp type="number" value={r.amount} onChange={e => upRow(i, { amount: e.target.value })} placeholder="0" style={{ fontSize: 12.5 }} /></td>
-                  <td style={{ padding: '7px 6px', width: 80 }}><Sl value={r.gst} onChange={e => upRow(i, { gst: +e.target.value })} style={{ fontSize: 12, padding: '7px 5px' }}>{[0, 5, 12, 18, 28].map(g => <option key={g} value={g}>{g}%</option>)}</Sl></td>
-                  <td style={{ padding: '7px 6px', width: 36 }}><button onClick={() => delRow(i)} style={{ width: 28, height: 28, background: 'var(--rdl)', border: 'none', borderRadius: 'var(--r-sm)', color: 'var(--rd)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{IC.tr}</button></td>
-                </tr>)}
-              </tbody>
-            </table>
-            <div style={{ display: 'flex', gap: 8, marginBottom: 14 }}>
-              <Btn v="ghost" sz="sm" onClick={addRow}>{IC.plus} Add Row</Btn>
-              <span style={{ fontSize: 12, color: 'var(--gy2)', display: 'flex', alignItems: 'center' }}>Total: {rows.filter(r => r.client && r.amount).length} invoices · {INR(rows.filter(r => r.amount).reduce((a, r) => a + (parseFloat(r.amount) || 0) * (1 + r.gst / 100), 0))}</span>
-            </div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <Btn v="ghost" onClick={onClose} style={{ flex: 1, justifyContent: 'center' }}>Cancel</Btn>
-              <Btn v="primary" onClick={createAll} style={{ flex: 2, justifyContent: 'center' }}>⚡ Create {rows.filter(r => r.client && r.amount).length} Invoices</Btn>
-            </div>
-          </> : <div style={{ textAlign: 'center', padding: '32px 0' }}>
-            <div style={{ fontSize: 52, marginBottom: 14 }}>✅</div>
-            <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 20, color: 'var(--gn)', marginBottom: 6 }}>All Invoices Created!</div>
-            <div style={{ fontSize: 13, color: 'var(--gy2)', marginBottom: 20 }}>Check Invoices section to view, print or share them.</div>
-            <Btn v="primary" onClick={onClose}>Go to Invoices</Btn>
-          </div>}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ══════════════════════════════════════════
-// 20 MORE FEATURES — FINAL BUILD
-// ══════════════════════════════════════════
-
-// ── TALLY XML EXPORT ──
-function exportTally(invs, biz) {
-  const ii = invs.filter(i => i.type === 'invoice');
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<ENVELOPE>
-  <HEADER><TALLYREQUEST>Import Data</TALLYREQUEST></HEADER>
-  <BODY><IMPORTDATA><REQUESTDESC><REPORTNAME>Vouchers</REPORTNAME></REQUESTDESC>
-  <REQUESTDATA>
-  ${ii.map(inv => {
-    const t = calcT(inv.items, inv.shipping, inv.paid);
-    return `<TALLYMESSAGE xmlns:UDF="TallyUDF">
-    <VOUCHER VCHTYPE="Sales" ACTION="Create">
-      <DATE>${(inv.date || TD()).replace(/-/g, '')}</DATE>
-      <NARRATION>${inv.number} - ${inv.to?.name || ''}</NARRATION>
-      <VOUCHERTYPENAME>Sales</VOUCHERTYPENAME>
-      <VOUCHERNUMBER>${inv.number}</VOUCHERNUMBER>
-      <PARTYLEDGERNAME>${inv.to?.name || 'Customer'}</PARTYLEDGERNAME>
-      <ALLLEDGERENTRIES.LIST>
-        <LEDGERNAME>${inv.to?.name || 'Customer'}</LEDGERNAME>
-        <ISDEEMEDPOSITIVE>Yes</ISDEEMEDPOSITIVE>
-        <AMOUNT>-${t.grand.toFixed(2)}</AMOUNT>
-      </ALLLEDGERENTRIES.LIST>
-      <ALLLEDGERENTRIES.LIST>
-        <LEDGERNAME>Sales</LEDGERNAME>
-        <ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE>
-        <AMOUNT>${t.sub.toFixed(2)}</AMOUNT>
-      </ALLLEDGERENTRIES.LIST>
-      ${t.cg > 0 ? `<ALLLEDGERENTRIES.LIST><LEDGERNAME>CGST</LEDGERNAME><ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE><AMOUNT>${t.cg.toFixed(2)}</AMOUNT></ALLLEDGERENTRIES.LIST>` : ''}
-      ${t.sg > 0 ? `<ALLLEDGERENTRIES.LIST><LEDGERNAME>SGST</LEDGERNAME><ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE><AMOUNT>${t.sg.toFixed(2)}</AMOUNT></ALLLEDGERENTRIES.LIST>` : ''}
-      ${t.ig > 0 ? `<ALLLEDGERENTRIES.LIST><LEDGERNAME>IGST</LEDGERNAME><ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE><AMOUNT>${t.ig.toFixed(2)}</AMOUNT></ALLLEDGERENTRIES.LIST>` : ''}
-    </VOUCHER></TALLYMESSAGE>`;
-  }).join('\n')}
-  </REQUESTDATA></IMPORTDATA></BODY>
-</ENVELOPE>`;
-  const blob = new Blob([xml], { type: 'application/xml' });
-  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-  a.download = `tally-export-${TD()}.xml`; a.click();
-}
-
-// ── GSTR-1 SUMMARY ──
-function GSTR1({ invs, biz, onClose }) {
-  const now = new Date();
-  const [mon, setMon] = useState(`${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`);
-  const ii = invs.filter(i => i.type === 'invoice' && (i.date || '').startsWith(mon));
-  const b2b = ii.filter(i => i.to?.gstin);
-  const b2c = ii.filter(i => !i.to?.gstin);
-  const hsnMap = {};
-  ii.forEach(inv => (inv.items || []).forEach(it => {
-    const h = it.hsn || 'N/A';
-    if (!hsnMap[h]) hsnMap[h] = { hsn: h, qty: 0, taxable: 0, cgst: 0, sgst: 0, igst: 0 };
-    const b = (+it.qty || 0) * (+it.rate || 0); const d = b * (+it.disc || 0) / 100;
-    hsnMap[h].qty += +it.qty || 0; hsnMap[h].taxable += b - d;
-    hsnMap[h].cgst += (b - d) * (+it.cgst || 0) / 100;
-    hsnMap[h].sgst += (b - d) * (+it.sgst || 0) / 100;
-    hsnMap[h].igst += (b - d) * (+it.igst || 0) / 100;
-  }));
-  const totTaxable = ii.reduce((a, i) => a + (i.subtotal || i.sub || 0), 0);
-  const totCGST = ii.reduce((a, i) => a + (i.totalCGST || i.cg || 0), 0);
-  const totSGST = ii.reduce((a, i) => a + (i.totalSGST || i.sg || 0), 0);
-  const totIGST = ii.reduce((a, i) => a + (i.totalIGST || i.ig || 0), 0);
-  const cur = biz.currency || 'INR';
-
-  const print = () => {
-    const w = window.open('', '_blank');
-    w.document.write(`<html><head><title>GSTR-1 ${mon}</title><style>body{font-family:Arial,sans-serif;padding:24px;font-size:13px;}h2{color:#FF6B35;}table{width:100%;border-collapse:collapse;margin:16px 0;}th{background:#FF6B35;color:white;padding:8px;text-align:left;font-size:11px;}td{padding:7px 8px;border-bottom:1px solid #eee;}.tot{font-weight:bold;background:#fff4ef;}</style></head><body>
-    <h2>GSTR-1 Summary — ${mon}</h2>
-    <p>Business: <b>${biz.name}</b> | GSTIN: <b>${biz.gstin || '—'}</b></p>
-    <h3>B2B Invoices (${b2b.length})</h3>
-    <table><tr><th>Invoice #</th><th>Date</th><th>Client</th><th>GSTIN</th><th>Taxable</th><th>CGST</th><th>SGST</th><th>IGST</th><th>Total</th></tr>
-    ${b2b.map(i => `<tr><td>${i.number}</td><td>${i.date}</td><td>${i.to?.name}</td><td>${i.to?.gstin}</td><td>${INR(i.subtotal || i.sub || 0)}</td><td>${INR(i.totalCGST || i.cg || 0)}</td><td>${INR(i.totalSGST || i.sg || 0)}</td><td>${INR(i.totalIGST || i.ig || 0)}</td><td><b>${INR(i.total)}</b></td></tr>`).join('')}
-    </table>
-    <h3>B2C Invoices (${b2c.length})</h3>
-    <table><tr><th>Invoice #</th><th>Date</th><th>Client</th><th>Taxable</th><th>Total Tax</th><th>Total</th></tr>
-    ${b2c.map(i => `<tr><td>${i.number}</td><td>${i.date}</td><td>${i.to?.name}</td><td>${INR(i.subtotal || i.sub || 0)}</td><td>${INR((i.totalCGST || i.cg || 0) + (i.totalSGST || i.sg || 0) + (i.totalIGST || i.ig || 0))}</td><td><b>${INR(i.total)}</b></td></tr>`).join('')}
-    </table>
-    <h3>HSN-Wise Summary</h3>
-    <table><tr><th>HSN/SAC</th><th>Qty</th><th>Taxable</th><th>CGST</th><th>SGST</th><th>IGST</th></tr>
-    ${Object.values(hsnMap).map(h => `<tr><td>${h.hsn}</td><td>${h.qty}</td><td>${INR(h.taxable)}</td><td>${INR(h.cgst)}</td><td>${INR(h.sgst)}</td><td>${INR(h.igst)}</td></tr>`).join('')}
-    </table>
-    <h3>Summary</h3>
-    <table><tr class="tot"><td>Total Taxable</td><td>${INR(totTaxable)}</td></tr><tr><td>Total CGST</td><td>${INR(totCGST)}</td></tr><tr><td>Total SGST</td><td>${INR(totSGST)}</td></tr><tr><td>Total IGST</td><td>${INR(totIGST)}</td></tr><tr class="tot"><td>Total Tax</td><td>${INR(totCGST + totSGST + totIGST)}</td></tr></table>
-    <p style="color:#999;font-size:11px;">Generated by InvoiceBolt</p></body></html>`);
-    w.document.close(); setTimeout(() => w.print(), 500);
-  };
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 700, maxHeight: '90vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease' }}>
-        <div style={{ padding: '16px 20px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, background: 'white' }}>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 16 }}>📋 GSTR-1 Summary</div>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <input type="month" value={mon} onChange={e => setMon(e.target.value)} style={{ padding: '6px 10px', border: '1.5px solid var(--bd)', borderRadius: 'var(--r-sm)', fontSize: 13, fontFamily: 'Inter,sans-serif', outline: 'none' }} />
-            <Btn v="primary" sz="sm" onClick={print}>🖨️ Print</Btn>
-            <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-          </div>
-        </div>
-        <div style={{ padding: '18px 20px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10, marginBottom: 18 }}>
-            {[['B2B Invoices', b2b.length, 'var(--bl)'], ['B2C Invoices', b2c.length, 'var(--or)'], ['Total Taxable', INR(totTaxable, cur), 'var(--dk)'], ['Total Tax', INR(totCGST + totSGST + totIGST, cur), 'var(--gn)']].map(([l, v, c]) => (
-              <div key={l} style={{ background: 'var(--gy6)', padding: '12px 14px', borderRadius: 'var(--r-md)', border: '1px solid var(--bd)' }}>
-                <div style={{ fontSize: 10, color: 'var(--gy2)', fontWeight: 700, textTransform: 'uppercase', marginBottom: 3 }}>{l}</div>
-                <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 16, color: c }}>{v}</div>
-              </div>
-            ))}
-          </div>
-          {[['B2B Invoices (With GSTIN)', b2b], ['B2C Invoices (Without GSTIN)', b2c]].map(([title, list]) => (
-            <div key={title} style={{ marginBottom: 18 }}>
-              <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 10, color: 'var(--dk)' }}>{title} ({list.length})</div>
-              {!list.length ? <div style={{ fontSize: 13, color: 'var(--gy2)', padding: '10px 0' }}>No invoices this month.</div> :
-                <div style={{ overflowX: 'auto' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12.5 }}>
-                    <thead><tr style={{ background: 'var(--gy6)' }}>{['#', 'Client', 'GSTIN', 'Taxable', 'CGST', 'SGST', 'IGST', 'Total'].map(h => <th key={h} style={{ padding: '8px 10px', textAlign: 'left', fontWeight: 700, fontSize: 10.5, color: 'var(--gy2)', textTransform: 'uppercase', borderBottom: '1px solid var(--bd)' }}>{h}</th>)}</tr></thead>
-                    <tbody>{list.map((i, idx) => <tr key={i.id} style={{ borderBottom: '1px solid var(--bd)', background: idx % 2 === 0 ? 'white' : 'var(--gy6)' }}>
-                      <td style={{ padding: '7px 10px', fontWeight: 700, color: 'var(--or)' }}>{i.number}</td>
-                      <td style={{ padding: '7px 10px' }}>{i.to?.name}</td>
-                      <td style={{ padding: '7px 10px', fontSize: 11, color: 'var(--gy2)' }}>{i.to?.gstin || '—'}</td>
-                      <td style={{ padding: '7px 10px' }}>{INR(i.subtotal || i.sub || 0, cur)}</td>
-                      <td style={{ padding: '7px 10px', color: 'var(--or)' }}>{INR(i.totalCGST || i.cg || 0, cur)}</td>
-                      <td style={{ padding: '7px 10px', color: 'var(--bl)' }}>{INR(i.totalSGST || i.sg || 0, cur)}</td>
-                      <td style={{ padding: '7px 10px', color: 'var(--pu)' }}>{INR(i.totalIGST || i.ig || 0, cur)}</td>
-                      <td style={{ padding: '7px 10px', fontWeight: 700 }}>{INR(i.total, cur)}</td>
-                    </tr>)}</tbody>
-                  </table>
-                </div>}
-            </div>
+        {amt>0&&<div style={{background:'var(--gy5)',borderRadius:'var(--r-md)',padding:14,marginBottom:12}}>
+          {[['Base Amount',INR(base)],['CGST '+(rate/2)+'%',INR(cgst)],['SGST '+(rate/2)+'%',INR(cgst)],['Total GST',INR(tax)]].map(([l,v])=>(
+            <div key={l} style={{display:'flex',justifyContent:'space-between',padding:'5px 0',fontSize:13,borderBottom:'1px solid var(--bd)'}}><span style={{color:'var(--gy)'}}>{l}</span><span style={{fontWeight:600}}>{v}</span></div>
           ))}
-          <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 10 }}>HSN/SAC Wise Summary</div>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12.5 }}>
-            <thead><tr style={{ background: 'var(--gy6)' }}>{['HSN/SAC', 'Quantity', 'Taxable', 'CGST', 'SGST', 'IGST'].map(h => <th key={h} style={{ padding: '8px 10px', textAlign: 'left', fontWeight: 700, fontSize: 10.5, color: 'var(--gy2)', textTransform: 'uppercase', borderBottom: '1px solid var(--bd)' }}>{h}</th>)}</tr></thead>
-            <tbody>{Object.values(hsnMap).map((h, i) => <tr key={h.hsn} style={{ borderBottom: '1px solid var(--bd)', background: i % 2 === 0 ? 'white' : 'var(--gy6)' }}>
-              <td style={{ padding: '7px 10px', fontWeight: 700 }}>{h.hsn}</td>
-              <td style={{ padding: '7px 10px' }}>{h.qty}</td>
-              <td style={{ padding: '7px 10px' }}>{INR(h.taxable, cur)}</td>
-              <td style={{ padding: '7px 10px', color: 'var(--or)' }}>{INR(h.cgst, cur)}</td>
-              <td style={{ padding: '7px 10px', color: 'var(--bl)' }}>{INR(h.sgst, cur)}</td>
-              <td style={{ padding: '7px 10px', color: 'var(--pu)' }}>{INR(h.igst, cur)}</td>
-            </tr>)}</tbody>
-          </table>
+          <div style={{display:'flex',justifyContent:'space-between',padding:'10px 0 0',fontFamily:'Syne,sans-serif',fontWeight:900,fontSize:19,color:'var(--or)'}}><span>Total</span><span>{INR(incl?parseFloat(amt||0):total)}</span></div>
+        </div>}
+        <div style={{display:'flex',gap:8}}>
+          <button onClick={()=>setAmt('')} style={{flex:1,padding:9,background:'var(--gy5)',border:'1px solid var(--bd)',borderRadius:'var(--r-sm)',cursor:'pointer',fontFamily:'Inter,sans-serif',fontWeight:600,fontSize:13}}>Clear</button>
+          <button onClick={()=>navigator.clipboard.writeText(`Base: ${INR(base)}, GST: ${INR(tax)}, Total: ${INR(total)}`)} style={{flex:1,padding:9,background:'var(--or)',border:'none',borderRadius:'var(--r-sm)',cursor:'pointer',color:'white',fontFamily:'Inter,sans-serif',fontWeight:700,fontSize:13}}>📋 Copy</button>
         </div>
       </div>
     </div>
-  );
+  </div>;
 }
 
-
-
-</script>
-<script type="text/babel">
-
-
-
-// ── LATE FEE CALCULATOR ──
-function LateFeeCalc({ inv, biz, onClose, toast }) {
-  const [rate, setRate] = useState(18);
-  const t = calcT(inv?.items || [], inv?.shipping, inv?.paid);
-  const principal = Math.max(0, t.bal);
-  const days = inv?.due ? Math.max(0, Math.floor((Date.now() - new Date(inv.due)) / 86400000)) : 0;
-  const interest = principal * (rate / 100) * (days / 365);
-  const total = principal + interest;
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 400, boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>⏱️ Late Fee Calculator</div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '22px' }}>
-          <div style={{ background: 'var(--rdl)', border: '1.5px solid var(--rd)', borderRadius: 'var(--r-md)', padding: '14px 16px', marginBottom: 18 }}>
-            <div style={{ fontSize: 12, color: 'var(--rd)', fontWeight: 700, marginBottom: 6 }}>⚠️ {inv?.number} — {inv?.to?.name}</div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 4 }}><span style={{ color: 'var(--gy)' }}>Principal Amount</span><span style={{ fontWeight: 700 }}>{INR(principal, biz.currency)}</span></div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 4 }}><span style={{ color: 'var(--gy)' }}>Days Overdue</span><span style={{ fontWeight: 700, color: 'var(--rd)' }}>{days} days</span></div>
-          </div>
-          <div style={{ marginBottom: 16 }}>
-            <label style={{ fontSize: 11, fontWeight: 700, color: 'var(--gy)', textTransform: 'uppercase', letterSpacing: '.5px', display: 'block', marginBottom: 6 }}>Interest Rate (% per annum)</label>
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-              {[12, 18, 24, 36].map(r => <button key={r} onClick={() => setRate(r)} style={{ padding: '6px 14px', borderRadius: 100, border: '1.5px solid', borderColor: rate === r ? 'var(--or)' : 'var(--bd)', background: rate === r ? 'var(--or)' : 'white', color: rate === r ? 'white' : 'var(--gy)', fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>{r}% p.a.</button>)}
-            </div>
-          </div>
-          <div style={{ background: 'var(--gy5)', borderRadius: 'var(--r-md)', padding: '16px', marginBottom: 16 }}>
-            {[['Principal', INR(principal, biz.currency)], ['Interest (' + rate + '% × ' + days + ' days)', INR(interest, biz.currency)]].map(([l, v]) => (
-              <div key={l} style={{ display: 'flex', justifyContent: 'space-between', padding: '5px 0', fontSize: 13, borderBottom: '1px solid var(--bd)', color: 'var(--dk3)' }}>
-                <span style={{ color: 'var(--gy)' }}>{l}</span><span style={{ fontWeight: 600 }}>{v}</span>
-              </div>
-            ))}
-            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '11px 0 0', fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 20, color: 'var(--rd)' }}>
-              <span>Total Due</span><span>{INR(total, biz.currency)}</span>
-            </div>
-          </div>
-          <button onClick={() => {
-            const msg = `⚠️ Payment Overdue Notice\n\nInvoice: ${inv?.number}\nOriginal Amount: ${INR(principal)}\nDays Overdue: ${days} days\nLate Interest (${rate}% p.a.): ${INR(interest)}\nTotal Amount Due: *${INR(total)}*\n\nPlease clear payment immediately to avoid further charges.\n\n${biz.name}`;
-            window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
-          }} style={{ width: '100%', padding: '13px', background: '#25d366', color: 'white', border: 'none', borderRadius: 'var(--r-md)', fontWeight: 700, fontSize: 14, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>
-            📱 Send Late Fee Notice on WhatsApp
-          </button>
-        </div>
+// ── KHATA BOOK ──
+function KhataPage({clis,invs,biz}){
+  const [sel,setSel]=useState(null);const cur=biz.currency||'INR';
+  if(sel){
+    const ci=invs.filter(i=>i.to?.name===sel.name);
+    const total=ci.reduce((a,i)=>a+i.total,0);
+    const paid2=ci.filter(i=>i.status==='paid').reduce((a,i)=>a+i.total,0);
+    return <div className="fu">
+      <div style={{display:'flex',alignItems:'center',gap:12,marginBottom:16}}>
+        <Btn v="ghost" sz="sm" onClick={()=>setSel(null)}>← Back</Btn>
+        <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:17}}>📒 {sel.name}</div>
       </div>
-    </div>
-  );
-}
-
-// ── DAILY BUSINESS SCORE ──
-function DailyScore({ invs, exps, biz, onClose }) {
-  const now = new Date(); const today = TD();
-  const ii = invs.filter(i => i.type === 'invoice');
-  const overdue = ii.filter(i => i.status === 'overdue' || (i.status !== 'paid' && i.due && i.due < today));
-  const dueToday = ii.filter(i => i.status !== 'paid' && i.due === today);
-  const paid30 = ii.filter(i => i.status === 'paid' && i.date >= AD(today, -30));
-  const pending = ii.filter(i => i.status !== 'paid');
-  const revenue30 = paid30.reduce((a, i) => a + i.total, 0);
-  const pending30 = pending.reduce((a, i) => a + i.total, 0);
-  const payRate = ii.length ? Math.round(paid30.length / Math.max(ii.length, 1) * 100) : 0;
-  let score = 100;
-  score -= overdue.length * 10;
-  score -= dueToday.length * 5;
-  score += Math.min(20, Math.floor(revenue30 / 10000));
-  score = Math.max(0, Math.min(100, score));
-  const grade = score >= 85 ? { l: 'Excellent 🌟', c: 'var(--gn)' } : score >= 65 ? { l: 'Good 👍', c: 'var(--bl)' } : score >= 45 ? { l: 'Average ⚡', c: 'var(--yl)' } : { l: 'Needs Action 🚨', c: 'var(--rd)' };
-  const cur = biz.currency || 'INR';
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 420, boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease', overflow: 'hidden' }}>
-        <div style={{ background: grade.c, padding: '28px 24px', textAlign: 'center' }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.7)', textTransform: 'uppercase', letterSpacing: '.8px', marginBottom: 8 }}>Today's Business Score</div>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 72, color: 'white', lineHeight: 1, letterSpacing: '-3px', marginBottom: 6 }}>{score}</div>
-          <div style={{ fontSize: 16, fontWeight: 700, color: 'rgba(255,255,255,.9)' }}>{grade.l}</div>
-        </div>
-        <div style={{ padding: '20px 22px' }}>
-          {[
-            ['💰 Revenue (30 days)', INR(revenue30, cur), 'var(--gn)'],
-            ['⏳ Pending Collection', INR(pending30, cur), 'var(--yl)'],
-            ['🔴 Overdue Invoices', overdue.length + ' invoices', overdue.length > 0 ? 'var(--rd)' : 'var(--gn)'],
-            ['📅 Due Today', dueToday.length + ' invoices', dueToday.length > 0 ? 'var(--or)' : 'var(--gn)'],
-            ['✅ Payment Rate', payRate + '%', payRate >= 80 ? 'var(--gn)' : 'var(--yl)'],
-          ].map(([l, v, c]) => (
-            <div key={l} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid var(--bd)' }}>
-              <span style={{ fontSize: 13.5, color: 'var(--dk)' }}>{l}</span>
-              <span style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 14, color: c }}>{v}</span>
-            </div>
-          ))}
-          {overdue.length > 0 && (
-            <div style={{ marginTop: 14, padding: '12px 14px', background: 'var(--rdl)', borderRadius: 'var(--r-md)', fontSize: 13, color: 'var(--rd)', lineHeight: 1.6 }}>
-              🚨 Action needed: {overdue.length} overdue invoice{overdue.length > 1 ? 's' : ''} worth {INR(overdue.reduce((a, i) => a + i.total, 0), cur)}. Follow up today!
-            </div>
-          )}
-          <Btn v="primary" onClick={onClose} style={{ width: '100%', justifyContent: 'center', marginTop: 16 }}>Got It — Let's Go! 💪</Btn>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── INVENTORY REORDER ALERTS ──
-function InventoryAlerts({ prods, invs, onClose }) {
-  const stockItems = prods.filter(p => p.stock !== '' && p.stock !== undefined && p.stock !== null);
-  const used = {};
-  invs.filter(i => i.type === 'invoice').forEach(inv => (inv.items || []).forEach(it => { if (it.desc) used[it.desc] = (used[it.desc] || 0) + (+it.qty || 0); }));
-  const alerts = stockItems.map(p => ({
-    ...p, used: used[p.name] || 0,
-    status: +p.stock <= 0 ? 'out' : +p.stock <= 5 ? 'critical' : +p.stock <= 20 ? 'low' : 'ok'
-  })).filter(p => p.status !== 'ok');
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 480, maxHeight: '85vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>📦 Inventory Alerts</div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '20px 22px' }}>
-          {!stockItems.length ? (
-            <div style={{ textAlign: 'center', padding: '32px 0' }}>
-              <div style={{ fontSize: 40, marginBottom: 10 }}>📦</div>
-              <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--dk3)', marginBottom: 6 }}>No stock tracking set up</div>
-              <div style={{ fontSize: 13, color: 'var(--gy2)' }}>Add stock quantity to products in Products & Services page.</div>
-            </div>
-          ) : !alerts.length ? (
-            <div style={{ textAlign: 'center', padding: '32px 0' }}>
-              <div style={{ fontSize: 40, marginBottom: 10 }}>✅</div>
-              <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--gn)' }}>All stock levels are healthy!</div>
-            </div>
-          ) : alerts.map((p, i) => {
-            const cfg = p.status === 'out' ? { bg: 'var(--rdl)', bd: 'var(--rd)', c: 'var(--rd)', label: '⛔ Out of Stock', emoji: '⛔' } : p.status === 'critical' ? { bg: '#fff5f5', bd: '#fca5a5', c: 'var(--rd)', label: '🚨 Critical', emoji: '🚨' } : { bg: 'var(--yll)', bd: '#fcd34d', c: 'var(--yl)', label: '⚠️ Low Stock', emoji: '⚠️' };
-            return (
-              <div key={p.id} style={{ padding: '14px 16px', background: cfg.bg, border: `1.5px solid ${cfg.bd}`, borderRadius: 'var(--r-md)', marginBottom: 10 }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
-                  <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--dk)' }}>{cfg.emoji} {p.name}</div>
-                  <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 9px', borderRadius: 100, background: cfg.c, color: 'white' }}>{cfg.label}</span>
-                </div>
-                <div style={{ display: 'flex', gap: 16, fontSize: 12.5, color: 'var(--gy)' }}>
-                  <span>Stock: <b style={{ color: cfg.c }}>{p.stock} {p.unit}</b></span>
-                  <span>Used (invoices): <b>{p.used} {p.unit}</b></span>
-                  <span>Rate: <b>{INR(p.rate)}</b></span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── REFERRAL SYSTEM ──
-function ReferralPage({ biz, toast, onClose }) {
-  const bizSlug = (biz.name || 'my-business').toLowerCase().replace(/[^a-z0-9]+/g, '-');
-  const refCode = 'EII-' + btoa(biz.name || 'user').replace(/[^A-Z0-9]/gi, '').slice(0, 8).toUpperCase();
-  const refLink = `https://invoicebolt.in?ref=${refCode}`;
-  const whatsappMsg = `🧾 *InvoiceBolt* — Free GST Invoice App for Indian Businesses!\n\n✅ Create invoices in 15 seconds\n✅ AI Voice Agent in Hindi\n✅ 8 Professional Templates\n✅ GST Compliant\n✅ 100% Free Forever\n\nUse my referral link: ${refLink}\n\n_I use it daily for my business — you'll love it!_`;
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 460, boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease', overflow: 'hidden' }}>
-        <div style={{ background: 'linear-gradient(135deg,var(--or),#e63c00)', padding: '28px 24px', textAlign: 'center' }}>
-          <div style={{ fontSize: 40, marginBottom: 10 }}>🎁</div>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 22, color: 'white', marginBottom: 6 }}>Refer & Earn</div>
-          <div style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', lineHeight: 1.6 }}>Refer a business owner → they get a great free app → you both win!</div>
-        </div>
-        <div style={{ padding: '22px' }}>
-          <div style={{ background: 'var(--gy5)', borderRadius: 'var(--r-md)', padding: '16px', marginBottom: 16, textAlign: 'center', border: '1.5px solid var(--bd)' }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--gy2)', textTransform: 'uppercase', letterSpacing: '.5px', marginBottom: 6 }}>Your Referral Code</div>
-            <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: 24, color: 'var(--or)', letterSpacing: 2, marginBottom: 8 }}>{refCode}</div>
-            <div style={{ fontSize: 12, color: 'var(--gy2)', marginBottom: 10, wordBreak: 'break-all' }}>{refLink}</div>
-            <Btn v="ghost" sz="sm" onClick={() => { navigator.clipboard.writeText(refLink); toast('Referral link copied!', 'success'); }}>📋 Copy Link</Btn>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12,marginBottom:16}}>
+        {[['Total Billed',INR(total,cur),'var(--dk)'],['Received',INR(paid2,cur),'var(--gn)'],['Balance',INR(total-paid2,cur),total-paid2>0?'var(--rd)':'var(--gn)']].map(([l,v,c])=>(
+          <div key={l} style={{background:'white',padding:'13px 15px',borderRadius:'var(--r-md)',border:'1px solid var(--bd)'}}>
+            <div style={{fontSize:10,color:'var(--gy2)',fontWeight:700,textTransform:'uppercase',marginBottom:3}}>{l}</div>
+            <div style={{fontFamily:'Syne,sans-serif',fontWeight:900,fontSize:17,color:c}}>{v}</div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
-            <button onClick={() => window.open('https://wa.me/?text=' + encodeURIComponent(whatsappMsg), '_blank')} style={{ padding: '13px', background: '#25d366', color: 'white', border: 'none', borderRadius: 'var(--r-md)', fontWeight: 700, fontSize: 14, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>💬 Share on WhatsApp</button>
-            <button onClick={() => window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('🧾 Using InvoiceBolt for GST invoicing — it\'s FREE and has AI voice agent in Hindi! ' + refLink), '_blank')} style={{ padding: '12px', background: '#1da1f2', color: 'white', border: 'none', borderRadius: 'var(--r-md)', fontWeight: 700, fontSize: 14, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>🐦 Share on Twitter</button>
-            <button onClick={() => { navigator.share ? navigator.share({ title: 'InvoiceBolt', text: whatsappMsg, url: refLink }) : navigator.clipboard.writeText(whatsappMsg); toast('Copied!', 'success'); }} style={{ padding: '12px', background: 'var(--gy5)', color: 'var(--dk)', border: '1.5px solid var(--bd)', borderRadius: 'var(--r-md)', fontWeight: 600, fontSize: 14, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>📤 Share via Any App</button>
-          </div>
-          <div style={{ marginTop: 14, fontSize: 12, color: 'var(--gy2)', textAlign: 'center', lineHeight: 1.6 }}>The more people you refer, the better features we can build — together! 🙏</div>
-        </div>
+        ))}
       </div>
-    </div>
-  );
-}
-
-// ── TAX SAVING TIPS ──
-function TaxTips({ exps, invs, biz, onClose }) {
-  const [tips, setTips] = useState('');
-  const [loading, setLoading] = useState(false);
-  const expBycat = {};
-  exps.forEach(e => { expBycat[e.category] = (expBycat[e.category] || 0) + e.amount; });
-  const revenue = invs.filter(i => i.status === 'paid').reduce((a, i) => a + i.total, 0);
-
-  const generate = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 600, system: 'You are a tax advisor for Indian small businesses. Give specific, actionable tax saving tips based on their data. Focus on legitimate deductions under Indian Income Tax Act. Use ₹ amounts. Be specific. 5-7 bullet points. Mention Section numbers when relevant.', messages: [{ role: 'user', content: `Business: ${biz.name}. Revenue: ₹${revenue.toLocaleString('en-IN')}. Expenses by category: ${JSON.stringify(expBycat)}. Business type: Small business/proprietorship. Give tax saving tips.` }] }) });
-      const d = await res.json();
-      setTips(d.content?.[0]?.text || 'Could not generate tips.');
-    } catch { setTips('Network error. Please try again.'); }
-    setLoading(false);
-  };
-
-  useEffect(() => { generate(); }, []);
-
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 520, maxHeight: '88vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div><div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>💡 AI Tax Saving Tips</div><div style={{ fontSize: 12, color: 'var(--gy2)', marginTop: 1 }}>Based on your actual business data</div></div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
+      <Card>{ci.length===0?<div style={{padding:32,textAlign:'center',color:'var(--gy2)'}}>No transactions yet.</div>:ci.map((i,idx)=>(
+        <div key={i.id} style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'11px 16px',borderBottom:'1px solid var(--bd)',background:idx%2===0?'white':'var(--gy6)'}}>
+          <div><div style={{fontWeight:600,fontSize:13}}>{i.number}</div><div style={{fontSize:11,color:'var(--gy2)'}}>{FD(i.date,biz.dateFormat)} · <span style={{color:i.status==='paid'?'var(--gn)':'var(--rd)',fontWeight:600,textTransform:'capitalize'}}>{i.status}</span></div></div>
+          <div style={{textAlign:'right'}}><div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:14}}>{INR(i.total,cur)}</div>{i.status==='paid'&&<div style={{fontSize:10,color:'var(--gn)'}}>✓ Paid</div>}</div>
         </div>
-        <div style={{ padding: '20px 22px' }}>
-          <div style={{ padding: '12px 14px', background: 'var(--yll)', borderRadius: 'var(--r-md)', marginBottom: 16, fontSize: 13, color: '#92400e', lineHeight: 1.65, border: '1px solid #fcd34d' }}>
-            ⚠️ These are general suggestions. Consult your CA before filing returns.
-          </div>
-          {loading ? <div style={{ textAlign: 'center', padding: '36px 0' }}>
-            <div style={{ display: 'flex', gap: 7, justifyContent: 'center', marginBottom: 12 }}><div className="dot" /><div className="dot" /><div className="dot" /></div>
-            <div style={{ fontSize: 14, color: 'var(--gy)' }}>AI analyzing your expenses…</div>
-          </div> : <div style={{ fontSize: 14, color: 'var(--dk)', lineHeight: 1.9, whiteSpace: 'pre-wrap' }}>{tips}</div>}
-          <div style={{ display: 'flex', gap: 8, marginTop: 18 }}>
-            <Btn v="ghost" sz="sm" onClick={generate}>🔄 Refresh</Btn>
-            <Btn v="primary" sz="sm" onClick={onClose} style={{ flex: 1, justifyContent: 'center' }}>Got It ✓</Btn>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── OFFLINE SERVICE WORKER REGISTRATION ──
-function registerSW() {
-  if ('serviceWorker' in navigator) {
-    const swCode = `
-const CACHE = 'eii-v1';
-const URLS = ['./', './app.html', './manifest.json'];
-self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(URLS))));
-self.addEventListener('fetch', e => e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match('./app.html')))));
-`;
-    const blob = new Blob([swCode], { type: 'application/javascript' });
-    const url = URL.createObjectURL(blob);
-    navigator.serviceWorker.register(url).catch(() => {});
+      ))}</Card>
+    </div>;
   }
-}
-
-// ── CLIENT ANNIVERSARY REMINDER ──
-function checkAnniversaries(clis, invs, toast) {
-  const today = new Date();
-  const mm = String(today.getMonth() + 1).padStart(2, '0');
-  const dd = String(today.getDate()).padStart(2, '0');
-  clis.forEach(c => {
-    if (c.anniversary) {
-      const [, m, d] = c.anniversary.split('-');
-      if (m === mm && d === dd) toast(`🎉 Today is ${c.name}'s business anniversary! Send them a greeting.`, '');
-    }
-    const firstInv = invs.filter(i => i.to?.name === c.name).sort((a, b) => new Date(a.date) - new Date(b.date))[0];
-    if (firstInv) {
-      const [fy, fm, fd] = firstInv.date.split('-');
-      if (fm === mm && fd === dd && fy !== String(today.getFullYear())) {
-        toast(`🎊 ${c.name} has been your client for ${today.getFullYear() - +fy} year${today.getFullYear() - +fy > 1 ? 's' : ''} today! 🙏`, '');
-      }
-    }
-  });
-}
-
-// ── INVOICE VERSIONING ──
-function saveVersion(inv) {
-  try {
-    const key = 'ibolt_ver_' + inv.id;
-    const existing = JSON.parse(localStorage.getItem(key) || '[]');
-    existing.push({ ...inv, savedAt: new Date().toISOString(), version: existing.length + 1 });
-    if (existing.length > 10) existing.shift();
-    localStorage.setItem(key, JSON.stringify(existing));
-  } catch {}
-}
-
-function getVersions(invId) {
-  try { return JSON.parse(localStorage.getItem('ibolt_ver_' + invId) || '[]'); } catch { return []; }
-}
-
-function InvoiceVersions({ invId, onRestore, onClose }) {
-  const versions = getVersions(invId);
-  return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,17,23,.72)', zIndex: 500, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 16, backdropFilter: 'blur(8px)' }} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div style={{ background: 'white', borderRadius: 'var(--r-xl)', width: '100%', maxWidth: 480, maxHeight: '85vh', overflowY: 'auto', boxShadow: 'var(--sh-xl)', animation: 'slideUp .2s ease' }}>
-        <div style={{ padding: '18px 22px', borderBottom: '1px solid var(--bd)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17 }}>🕐 Invoice History</div>
-          <button onClick={onClose} style={{ background: 'var(--gy5)', border: 'none', width: 28, height: 28, borderRadius: '50%', cursor: 'pointer', fontSize: 14 }}>✕</button>
-        </div>
-        <div style={{ padding: '18px 22px' }}>
-          {!versions.length ? <div style={{ textAlign: 'center', padding: '32px 0', color: 'var(--gy2)' }}>No version history yet. History is saved on each edit.</div> :
-            versions.reverse().map((v, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', border: '1.5px solid var(--bd)', borderRadius: 'var(--r-md)', marginBottom: 9 }}>
-                <div>
-                  <div style={{ fontWeight: 700, fontSize: 13.5, color: 'var(--dk)' }}>Version {v.version}</div>
-                  <div style={{ fontSize: 12, color: 'var(--gy2)', marginTop: 2 }}>{new Date(v.savedAt).toLocaleString('en-IN')} · {INR(v.total)}</div>
-                </div>
-                <Btn v="ghost" sz="sm" onClick={() => { if (confirm('Restore this version?')) { onRestore(v); onClose(); } }}>Restore</Btn>
-              </div>
-            ))}
-        </div>
-      </div>
+  return <div className="fu">
+    <div style={{marginBottom:16}}><div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:19}}>📒 Khata Book</div><div style={{fontSize:13,color:'var(--gy2)'}}>Traditional ledger per client</div></div>
+    <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:12}}>
+      {!clis.length?<div style={{gridColumn:'1/-1',textAlign:'center',padding:40,color:'var(--gy2)'}}>No clients yet.</div>:
+        clis.map(c=>{const ci2=invs.filter(i=>i.to?.name===c.name);const bal=ci2.reduce((a,i)=>a+(i.status==='paid'?0:i.total),0);
+        return <div key={c.id} onClick={()=>setSel(c)} style={{background:'white',border:'1.5px solid var(--bd)',borderRadius:'var(--r-md)',padding:16,cursor:'pointer',transition:'all .2s'}}
+          onMouseEnter={e=>{e.currentTarget.style.borderColor='var(--or)';e.currentTarget.style.transform='translateY(-2px)';}}
+          onMouseLeave={e=>{e.currentTarget.style.borderColor='var(--bd)';e.currentTarget.style.transform='';}}>
+          <div style={{display:'flex',alignItems:'center',gap:9,marginBottom:10}}>
+            <div style={{width:36,height:36,borderRadius:'var(--r)',background:'var(--orl)',color:'var(--or)',fontWeight:900,fontSize:13,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Syne,sans-serif'}}>{INI(c.name)}</div>
+            <div style={{fontWeight:700,fontSize:13}}>{c.name}</div>
+          </div>
+          <div style={{display:'flex',justifyContent:'space-between',paddingTop:8,borderTop:'1px solid var(--bd)'}}>
+            <span style={{fontSize:11,color:'var(--gy2)'}}>Balance</span>
+            <span style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:14,color:bal>0?'var(--rd)':'var(--gn)'}}>{INR(bal,cur)}</span>
+          </div>
+        </div>;})}
     </div>
-  );
-}
-
-// ── COMMAND PALETTE (Ctrl+K) ──
-function CommandPalette({ onClose, setPg, openNew, setQuickInv, setGstCalc, setBulkInv, setCashFlow, setGstRep, setDailyScore, setReferral }) {
-  const [q, setQ] = useState('');
-  const [sel, setSel] = useState(0);
-  const inpRef = useRef();
-  useEffect(() => { setTimeout(() => inpRef.current?.focus(), 50); }, []);
-  const cmds = [
-    { sec: 'Quick Actions', items: [
-      { icon: '⚡', label: 'Quick Invoice — 15 seconds', action: () => { setQuickInv(true); onClose(); } },
-      { icon: '🧾', label: 'New Tax Invoice', action: () => { openNew('invoice'); onClose(); } },
-      { icon: '📋', label: 'New Estimate', action: () => { openNew('estimate'); onClose(); } },
-      { icon: '🧮', label: 'GST Calculator', action: () => { setGstCalc(true); onClose(); } },
-      { icon: '📦', label: 'Bulk Invoice Creator', action: () => { setBulkInv(true); onClose(); } },
-    ]},
-    { sec: 'Navigate', items: [
-      { icon: '🏠', label: 'Dashboard', action: () => { setPg('dashboard'); onClose(); } },
-      { icon: '🧾', label: 'Invoices', action: () => { setPg('invoices'); onClose(); } },
-      { icon: '👥', label: 'Clients', action: () => { setPg('clients'); onClose(); } },
-      { icon: '📦', label: 'Products', action: () => { setPg('products'); onClose(); } },
-      { icon: '💰', label: 'Expenses', action: () => { setPg('expenses'); onClose(); } },
-      { icon: '📊', label: 'Reports', action: () => { setPg('reports'); onClose(); } },
-      { icon: '⚙️', label: 'Settings', action: () => { setPg('settings'); onClose(); } },
-      { icon: '📒', label: 'Khata Book', action: () => { setPg('khata'); onClose(); } },
-    ]},
-    { sec: 'AI Tools', items: [
-      { icon: '📊', label: 'Cash Flow Predictor', action: () => { setCashFlow(true); onClose(); } },
-      { icon: '🧾', label: 'GST Report for CA', action: () => { setGstRep(true); onClose(); } },
-      { icon: '🏆', label: 'Daily Business Score', action: () => { setDailyScore(true); onClose(); } },
-      { icon: '🎁', label: 'Refer & Earn', action: () => { setReferral(true); onClose(); } },
-    ]},
-  ];
-  const flat = cmds.flatMap(s => s.items.map(i => ({ ...i, sec: s.sec })));
-  const filtered = q ? flat.filter(i => i.label.toLowerCase().includes(q.toLowerCase())) : flat;
-  const grouped = q ? [{ sec: 'Results', items: filtered }] : cmds;
-  useEffect(() => { setSel(0); }, [q]);
-  const handleKey = e => {
-    if (e.key === 'ArrowDown') { e.preventDefault(); setSel(s => Math.min(s + 1, filtered.length - 1)); }
-    if (e.key === 'ArrowUp') { e.preventDefault(); setSel(s => Math.max(s - 1, 0)); }
-    if (e.key === 'Enter' && filtered[sel]) { filtered[sel].action(); }
-    if (e.key === 'Escape') onClose();
-  };
-  let idx = 0;
-  return (
-    <div className="cmd-overlay" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className="cmd-box" style={{ animation: 'slideUp .18s ease' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '0 16px', borderBottom: '1px solid var(--bd)' }}>
-          <span style={{ fontSize: 16, color: 'var(--gy2)' }}>🔍</span>
-          <input ref={inpRef} className="cmd-inp" value={q} onChange={e => setQ(e.target.value)} onKeyDown={handleKey} placeholder="Search actions, pages, tools…" style={{ flex: 1, padding: '16px 0', border: 'none', fontSize: 15, fontFamily: 'Inter,sans-serif', color: 'var(--dk)', outline: 'none' }} />
-          <span style={{ fontSize: 11, color: 'var(--gy2)', background: 'var(--gy5)', padding: '3px 7px', borderRadius: 6, fontWeight: 600 }}>ESC</span>
-        </div>
-        <div className="cmd-results">
-          {(q ? [{ sec: 'Results', items: filtered }] : cmds).map(group => (
-            <div key={group.sec}>
-              <div className="cmd-sec">{group.sec}</div>
-              {group.items.map(item => {
-                const i = idx++;
-                return (
-                  <div key={item.label} className={'cmd-item' + (i === sel ? ' cmd-sel' : '')} onClick={item.action} onMouseEnter={() => setSel(i)}>
-                    <div className="cmd-icon">{item.icon}</div>
-                    <span style={{ fontSize: 13.5 }}>{item.label}</span>
-                    {i === sel && <span style={{ marginLeft: 'auto', fontSize: 11, color: 'var(--gy2)', background: 'var(--gy5)', padding: '2px 7px', borderRadius: 5 }}>↵</span>}
-                  </div>
-                );
-              })}
-            </div>
-          ))}
-          {filtered.length === 0 && <div style={{ padding: '28px', textAlign: 'center', color: 'var(--gy2)', fontSize: 14 }}>No results for "{q}"</div>}
-        </div>
-        <div style={{ padding: '8px 16px', borderTop: '1px solid var(--bd)', display: 'flex', gap: 16, fontSize: 11, color: 'var(--gy2)' }}>
-          <span>↑↓ Navigate</span><span>↵ Select</span><span>ESC Close</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── MOBILE BOTTOM NAV ──
-function MobileNav({ pg, setPg, openNew }) {
-  return (
-    <div className="mob-nav">
-      <div className="mob-nav-inner">
-        <div className={'mob-nav-item' + (pg === 'dashboard' ? ' active' : '')} onClick={() => setPg('dashboard')}>
-          <span style={{ fontSize: 20 }}>🏠</span><span>Home</span>
-        </div>
-        <div className={'mob-nav-item' + (pg === 'invoices' ? ' active' : '')} onClick={() => setPg('invoices')}>
-          <span style={{ fontSize: 20 }}>🧾</span><span>Invoices</span>
-        </div>
-        <button className="mob-fab" onClick={() => openNew('invoice')}>⚡</button>
-        <div className={'mob-nav-item' + (pg === 'clients' ? ' active' : '')} onClick={() => setPg('clients')}>
-          <span style={{ fontSize: 20 }}>👥</span><span>Clients</span>
-        </div>
-        <div className={'mob-nav-item' + (pg === 'reports' ? ' active' : '')} onClick={() => setPg('reports')}>
-          <span style={{ fontSize: 20 }}>📊</span><span>Reports</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ── EMPTY STATE COMPONENT ──
-function EmptyState({ icon, title, sub, cta, onCta }) {
-  return (
-    <div className="empty-state">
-      <div className="es-icon" style={{ animation: 'float 3s ease-in-out infinite' }}>{icon}</div>
-      <div className="es-title">{title}</div>
-      <div className="es-sub">{sub}</div>
-      {cta && <button onClick={onCta} style={{ padding: '12px 28px', background: 'var(--or)', color: 'white', border: 'none', borderRadius: 'var(--r-md)', fontWeight: 700, fontSize: 14, cursor: 'pointer', fontFamily: 'Inter,sans-serif', boxShadow: '0 4px 16px rgba(255,107,53,.35)', transition: 'all .2s' }}
-        onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(255,107,53,.45)'; }}
-        onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 16px rgba(255,107,53,.35)'; }}>
-        {cta}
-      </button>}
-    </div>
-  );
+  </div>;
 }
 
 ReactDOM.render(<App/>,document.getElementById("root"));
-
-
-
 </script>
+</body>
+</html>
