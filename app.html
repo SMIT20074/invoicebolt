@@ -362,7 +362,7 @@ function GSTCalc({onClose}){
   );
 }
 
-function AIAgent({onClose,biz,clis,invs,exps,toast,onGen}){
+function AIAgent({onClose,biz,clis,invs,exps,apiKey,toast,onGen}){
   const[msgs,setMsgs]=useState([{r:'b',t:'Namaste! 🙏 Main BoltBot hoon.\n\nMujhse kuch bhi poochho:\n• "Sharma ko ₹25,000 invoice banao"\n• "Kitne unpaid invoices hain?"\n• "GST calculate karo ₹50,000 pe 18%"\n• "Is month ka revenue?"\n\nVoice ya type — dono kaam karta hai! 🎤'}]);
   const[inp,setInp]=useState('');
   const[loading,setLoading]=useState(false);
@@ -409,8 +409,10 @@ function AIAgent({onClose,biz,clis,invs,exps,toast,onGen}){
     setInp('');setMsgs(p=>[...p,{r:'u',t:q}]);setLoading(true);
     const ctx=buildCtx();
     try{
+      const apiKey=localStorage.getItem('ib_apikey')||'';
+      if(!apiKey){setMsgs(p=>[...p,{r:'b',t:'⚙️ API Key nahi mila!\n\nSettings → AI Settings mein apna Anthropic API Key daalo.\n\nFree key milti hai: platform.anthropic.com'}]);setLoading(false);return;}
       const res=await fetch('https://api.anthropic.com/v1/messages',{
-        method:'POST',headers:{'Content-Type':'application/json','anthropic-dangerous-direct-browser-access':'true'},
+        method:'POST',headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
         body:JSON.stringify({
           model:'claude-sonnet-4-6',max_tokens:700,
           system:`You are BoltBot — a smart, friendly AI invoice assistant for InvoiceBolt app. You speak naturally in Hindi, English, and Hinglish.
@@ -509,8 +511,9 @@ RULES:
             </div>
           </div>
           <div style={{display:'flex',alignItems:'center',gap:10}}>
-            <div style={{display:'flex',gap:4,alignItems:'center',fontSize:11.5,color:'#10b981',fontWeight:600}}>
-              <div style={{width:6,height:6,borderRadius:'50%',background:'#10b981',animation:'pulse 2s ease infinite'}}/>Live
+            <div style={{display:'flex',gap:4,alignItems:'center',fontSize:11.5,color:apiKey?'#10b981':'#f59e0b',fontWeight:600}}>
+              <div style={{width:6,height:6,borderRadius:'50%',background:apiKey?'#10b981':'#f59e0b',animation:'pulse 2s ease infinite'}}/>
+              {apiKey?'Live':'Setup needed'}
             </div>
             <button onClick={onClose} style={{background:'rgba(255,255,255,.08)',border:'none',color:'rgba(255,255,255,.6)',width:30,height:30,borderRadius:'50%',cursor:'pointer',fontSize:15,display:'flex',alignItems:'center',justifyContent:'center'}}>✕</button>
           </div>
@@ -880,9 +883,9 @@ function ExpensesPage({exps,setExps,toast}){
 }
 
 function SettingsPage({biz,setBiz,tpl,setTpl,toast,invs,clis,prods,exps}){
-  const[form,setForm]=useState(biz);
+  const[form,setForm]=useState({...biz,apiKey:ls('ib_apikey','')});
   const up=k=>e=>setForm(p=>({...p,[k]:e.target.value}));
-  const save=()=>{setBiz(form);toast('Settings saved!','success');};
+  const save=()=>{setBiz(form);if(form.apiKey){sv('ib_apikey',form.apiKey);setApiKey(form.apiKey);}toast('Settings saved!','success');};
   const exportData=()=>{const d={invs,clis,prods,exps,settings:biz,ts:Date.now()};const b=new Blob([JSON.stringify(d)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='invoicebolt-backup-'+TD()+'.json';a.click();toast('Backup downloaded!','success');};
   const importData=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{try{const d=JSON.parse(ev.target.result);if(d.invs)sv('ib_invs',d.invs);if(d.clis)sv('ib_clis',d.clis);if(d.prods)sv('ib_prods',d.prods);if(d.exps)sv('ib_exps',d.exps);toast('Imported! Reloading…','success');setTimeout(()=>window.location.reload(),1200);}catch{toast('Invalid file','error');}};r.readAsText(f);};
   const TA=p=><textarea value={p.value} onChange={p.onChange} rows={p.rows||2} placeholder={p.ph||''} style={{width:'100%',padding:'9px 12px',border:'1.5px solid var(--bd)',borderRadius:'var(--r-sm)',fontSize:13,fontFamily:'Inter,sans-serif',color:'var(--txt)',background:'var(--card)',outline:'none',resize:'vertical'}}/>;
@@ -908,6 +911,28 @@ function SettingsPage({biz,setBiz,tpl,setTpl,toast,invs,clis,prods,exps}){
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(90px,1fr))',gap:8}}>
             {TEMPLATES.map(t2=><div key={t2} onClick={()=>{setTpl(t2);sv('ib_tpl',t2);toast('Template: '+t2,'success');}} style={{padding:10,borderRadius:'var(--r-md)',border:'2px solid '+(tpl===t2?'var(--or)':'var(--bd)'),cursor:'pointer',textAlign:'center',fontSize:12,fontWeight:600,background:tpl===t2?'var(--orl)':'var(--card)',color:tpl===t2?'var(--or)':'var(--txt2)',transition:'all .15s'}}>{t2}</div>)}
           </div>
+        </Card>
+        <Card><div style={{fontWeight:700,fontSize:14,marginBottom:12}}>🤖 AI Settings (BoltBot)</div>
+          <div style={{marginBottom:12}}>
+            <Label>Anthropic API Key</Label>
+            <Inp type="password" defaultValue={localStorage.getItem('ib_apikey')||''} 
+              onChange={e=>localStorage.setItem('ib_apikey',e.target.value)}
+              placeholder="sk-ant-api03-…"/>
+            <div style={{fontSize:11.5,color:'var(--txt3)',marginTop:6,lineHeight:1.6}}>
+              Free key at <b>platform.anthropic.com</b> → API Keys → Create Key.<br/>
+              Key is saved only on your device — never sent anywhere else.
+            </div>
+          </div>
+        </Card>
+        <Card><div style={{fontWeight:700,fontSize:14,marginBottom:12}}>🤖 AI Setup (BoltBot)</div>
+          <div style={{padding:'12px 14px',background:'var(--bll)',borderRadius:'var(--r-md)',marginBottom:12,fontSize:13,color:'var(--bl)',lineHeight:1.65}}>
+            BoltBot AI ke liye Anthropic API key chahiye. Free mein milti hai:<br/>
+            <b>platform.anthropic.com</b> → Sign Up → API Keys → Create Key
+          </div>
+          <div style={{marginBottom:8}}><Label>Anthropic API Key</Label>
+            <Inp type="password" value={form.apiKey||''} onChange={e=>{setForm(p=>({...p,apiKey:e.target.value}));sv('ib_apikey',e.target.value);}} placeholder="sk-ant-api03-…"/>
+          </div>
+          <div style={{fontSize:12,color:'var(--txt3)'}}>Key sirf aapke device pe save hoti hai — kahi upload nahi hoti. 🔒</div>
         </Card>
         <Card><div style={{fontWeight:700,fontSize:14,marginBottom:12}}>💾 Backup & Data</div>
           <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
@@ -978,6 +1003,7 @@ function App(){
   const[exps,setExps]=useState(()=>ls(LS.exps,[]));
   const[biz,setBiz]=useState(()=>ls(LS.sets,{name:'',gstin:'',currency:'INR',prefix:'INV',dateFormat:'DD/MM/YYYY',defaultNotes:'',footer:'Thank you for your business!',bankName:'',bankAcc:'',bankIFSC:'',upi:'',phone:'',email:'',address:'',logo:'',signature:'',pan:'',website:''}));
   const[tpl,setTpl]=useState(()=>ls(LS.tpl,'Classic'));
+  const[apiKey,setApiKey]=useState(()=>ls('ib_apikey',''));
   const[editInv,setEditInv]=useState(null);
   const[showEd,setShowEd]=useState(false);
   const[agOpen,setAgOpen]=useState(false);
@@ -1129,7 +1155,7 @@ function App(){
       {milestone&&<Milestone data={milestone} onClose={()=>setMilestone(null)}/>}
       {quickInv&&<QuickInvoice biz={biz} clis={clis} invs={invs} onSave={saveInv} toast={toast} onClose={()=>setQuickInv(false)}/>}
       {gstCalc&&<GSTCalc onClose={()=>setGstCalc(false)}/>}
-      {agOpen&&<AIAgent onClose={()=>setAgOpen(false)} biz={biz} clis={clis} invs={invs} exps={exps} toast={toast} onGen={inv=>{setEditInv(inv);setAgOpen(false);setShowEd(true);}}/>}
+      {agOpen&&<AIAgent onClose={()=>setAgOpen(false)} biz={biz} clis={clis} invs={invs} exps={exps} apiKey={apiKey} toast={toast} onGen={inv=>{setEditInv(inv);setAgOpen(false);setShowEd(true);}}/>}
       {showEd&&<Editor inv={editInv} biz={biz} clis={clis} onSave={saveInv} onClose={()=>{setShowEd(false);setEditInv(null);}} tpl={tpl}/>}
       <Toast ts={ts}/>
     </div>
