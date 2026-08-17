@@ -409,8 +409,6 @@ function AIAgent({onClose,biz,clis,invs,exps,apiKey,toast,onGen}){
     setInp('');setMsgs(p=>[...p,{r:'u',t:q}]);setLoading(true);
     const ctx=buildCtx();
     try{
-      const apiKey=localStorage.getItem('ib_apikey')||'';
-      if(!apiKey){setMsgs(p=>[...p,{r:'b',t:'⚙️ API Key nahi mila!\n\nSettings → AI Settings mein apna Anthropic API Key daalo.\n\nFree key milti hai: platform.anthropic.com'}]);setLoading(false);return;}
       const _a='gsk_Um0P3oPHPb6fN3',_b='QpgZ6BWGdyb3FYy3vx',_c='jOzuCdg02C8Z9lG9BvqZ',GROQ_KEY=_a+_b+_c;
       const sys=`You are BoltBot — AI invoice assistant for InvoiceBolt. Speak Hindi, English, Hinglish naturally.
 Business: ${biz.name}, Currency: ${biz.currency||'INR'}
